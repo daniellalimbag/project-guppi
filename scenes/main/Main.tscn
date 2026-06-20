@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bqtsgle0dndft"]
+
+[ext_resource type="Script" uid="uid://driqtemyb8w01" path="res://scenes/main/Main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/BottomNavBar.tscn" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phone"]
+bg_color = Color(0.08, 0.09, 0.11, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22, 0.24, 0.28, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_screen"]
+bg_color = Color(0.12, 0.13, 0.16, 1)
+
+[node name="Main" type="Control" unique_id=100113412]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=916529418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.07, 1)
+
+[node name="PhoneFrameHost" type="MarginContainer" parent="." unique_id=2023678339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PhoneFrameHost" unique_id=251945046]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 0.461538
+stretch_mode = 1
+
+[node name="PhoneFrame" type="PanelContainer" parent="PhoneFrameHost/AspectRatioContainer" unique_id=1928991672]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_phone")
+
+[node name="PhoneVBox" type="VBoxContainer" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame" unique_id=1300997302]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StatusBar" type="PanelContainer" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox" unique_id=1525113073]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_screen")
+
+[node name="StatusMargin" type="MarginContainer" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox/StatusBar" unique_id=460491112]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 6
+
+[node name="StatusHBox" type="HBoxContainer" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox/StatusBar/StatusMargin" unique_id=1821212866]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimeLabel" type="Label" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox/StatusBar/StatusMargin/StatusHBox" unique_id=1721444218]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "9:41"
+
+[node name="StatusSpacer" type="Control" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox/StatusBar/StatusMargin/StatusHBox" unique_id=1630077578]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DayLabel" type="Label" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox/StatusBar/StatusMargin/StatusHBox" unique_id=1947934411]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Day 1"
+
+[node name="SignalLabel" type="Label" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox/StatusBar/StatusMargin/StatusHBox" unique_id=209153579]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "▮▮▮ 🔋"
+
+[node name="ScreenHost" type="Control" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox" unique_id=1427705531]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomNavBar" parent="PhoneFrameHost/AspectRatioContainer/PhoneFrame/PhoneVBox" unique_id=1462605394 instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2

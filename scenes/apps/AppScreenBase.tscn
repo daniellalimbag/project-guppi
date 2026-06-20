@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://app_screen_base"]
+
+[ext_resource type="Script" path="res://scenes/apps/AppScreenBase.gd" id="1"]
+
+[node name="AppScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="AppVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="AppHeader" type="PanelContainer" parent="AppVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HeaderMargin" type="MarginContainer" parent="AppVBox/AppHeader"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HeaderHBox" type="HBoxContainer" parent="AppVBox/AppHeader/HeaderMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderIcon" type="Label" parent="AppVBox/AppHeader/HeaderMargin/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "•"
+vertical_alignment = 1
+
+[node name="HeaderTitle" type="Label" parent="AppVBox/AppHeader/HeaderMargin/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "App"
+vertical_alignment = 1
+
+[node name="ContentScroll" type="ScrollContainer" parent="AppVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentMargin" type="MarginContainer" parent="AppVBox/ContentScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ContentVBox" type="VBoxContainer" parent="AppVBox/ContentScroll/ContentMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="SubtitleLabel" type="Label" parent="AppVBox/ContentScroll/ContentMargin/ContentVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.65, 0.72, 1)
+text = "Coming in a later phase."
+autowrap_mode = 3

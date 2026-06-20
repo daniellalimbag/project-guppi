@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://e27m4e6kol88"]
+
+[ext_resource type="PackedScene" path="res://scenes/apps/AppScreenBase.tscn" id="1"]
+[ext_resource type="Script" uid="uid://wkwtqolple0" path="res://scenes/apps/SocialStreamApp.gd" id="2"]
+
+[node name="SocialStreamApp" unique_id=2091963193 instance=ExtResource("1")]
+script = ExtResource("2")

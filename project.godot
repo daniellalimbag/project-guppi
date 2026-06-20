@@ -11,11 +11,18 @@ config_version=5
 [application]
 
 config/name="Project GUPPI"
+run/main_scene="res://scenes/main/Main.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://scripts/autoload/GameState.gd"
+
 [display]
 
+window/size/viewport_width=390
+window/size/viewport_height=844
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

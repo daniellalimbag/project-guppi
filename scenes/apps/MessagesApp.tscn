@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://messages_app"]
+
+[ext_resource type="PackedScene" uid="uid://app_screen_base" path="res://scenes/apps/AppScreenBase.tscn" id="1"]
+[ext_resource type="Script" path="res://scenes/apps/MessagesApp.gd" id="2"]
+
+[node name="MessagesApp" instance=ExtResource("1")]
+script = ExtResource("2")
