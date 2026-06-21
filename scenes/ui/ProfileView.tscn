@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://profile_view"]
+
+[ext_resource type="Script" path="res://scenes/ui/ProfileView.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.11, 0.12, 0.15, 1)
+
+[node name="ProfileView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="ProfileVBox" type="VBoxContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="HBoxContainer" parent="Background/ProfileVBox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Background/ProfileVBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+focus_mode = 0
+flat = true
+text = "◀  Back"
+
+[node name="TopTitle" type="Label" parent="Background/ProfileVBox/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "Profile"
+horizontal_alignment = 1
+
+[node name="TopSpacer" type="Control" parent="Background/ProfileVBox/TopBar"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+
+[node name="ProfileScroll" type="ScrollContainer" parent="Background/ProfileVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ProfileMargin" type="MarginContainer" parent="Background/ProfileVBox/ProfileScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ProfileContent" type="VBoxContainer" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="AvatarPanel" type="PanelContainer" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AvatarLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent/AvatarPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="BioLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.68, 0.71, 0.78, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="FollowersLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Followers: 0"
+
+[node name="AccountAgeLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Account age: Unknown"
+
+[node name="VerifiedLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Verified: No"
+
+[node name="EngagementLabel" type="Label" parent="Background/ProfileVBox/ProfileScroll/ProfileMargin/ProfileContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.55, 0.45, 1)
+autowrap_mode = 3

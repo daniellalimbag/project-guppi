@@ -25,3 +25,7 @@ const LAUNCHER_ICON_EXPORT_3X := Vector2(168, 168)
 
 ## Export bottom-nav icons at 48×48 (2x of 24px logical).
 const BOTTOM_NAV_ICON_EXPORT := Vector2(48, 48)
+
+## PostCard moderation UI.
+const EVIDENCE_BUTTON_MIN := Vector2(44, 44)
+const VERDICT_BUTTON_MIN := Vector2(44, 44)
