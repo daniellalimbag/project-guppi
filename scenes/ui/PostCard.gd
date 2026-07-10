@@ -169,7 +169,7 @@ func _on_card_gui_input(event: InputEvent) -> void:
 
 func _finish_drag() -> void:
 	if _drag_offset.length() >= SWIPE_DISTANCE_THRESHOLD:
-		_commit_verdict(PostVerdict.Type.REAL, true)
+		_commit_verdict(PostVerdict.Type.CREDIBLE, true)
 	else:
 		_snap_back()
 

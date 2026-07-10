@@ -1,0 +1,164 @@
+[
+  {
+    "id": "l2_post_001",
+    "username": "NeighborhoodWatchLocal",
+    "handle": "@nbhd_watch",
+    "verified": false,
+    "account_age": "11 months",
+    "avatar_color": "#9C27B0",
+    "content": "Heard from a friend that school is cancelled tomorrow due to flooding. Share so parents know!",
+    "image": null,
+    "image_note": "No primary source document.",
+    "likes": "2.1K",
+    "comments_count": "480",
+    "shares": "1.6K",
+    "timestamp": "1 hour ago",
+    "is_fake": true,
+    "feedback_correct": "Secondhand rumor with no official source.",
+    "feedback_wrong": "Should escalate - hearsay, no school/gov confirmation.",
+    "guppi_hint": "Look for an official account or named source.",
+    "insight_tag": "Unverified sources",
+    "comments": [
+      {
+        "username": "parent_ria",
+        "content": "Can someone confirm this?",
+        "is_bot": false
+      },
+      {
+        "username": "user_8821",
+        "content": "True!! Share now!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Local tips and alerts",
+      "post_count": 84,
+      "followers": "9.4K",
+      "following": "1201",
+      "joined": "11 months ago",
+      "engagement_ratio": "Spikes only on fear posts",
+      "bot_followers_pct": "42",
+      "follower_quality_note": "Mixed: some neighbors, many one-post amplifers.",
+      "red_flags": [
+        "No verified badge",
+        "Claims based on 'a friend said'",
+        "Moderate bot-follower percentage"
+      ],
+      "recent_posts": [
+        {
+          "text": "Traffic is crazy today",
+          "likes": "13.5K"
+        },
+        {
+          "text": "Beware of strangers!!!",
+          "likes": "14.5K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l2_post_002",
+    "username": "DepEd Official",
+    "handle": "@deped_ph",
+    "verified": true,
+    "account_age": "8 years",
+    "avatar_color": "#1565C0",
+    "content": "Advisory: Classes remain as scheduled tomorrow. Follow only official announcements.",
+    "image": null,
+    "image_note": "Official clarification post.",
+    "likes": "18K",
+    "comments_count": "920",
+    "shares": "6.1K",
+    "timestamp": "45 minutes ago",
+    "is_fake": false,
+    "feedback_correct": "Verified agency account with clear advisory.",
+    "feedback_wrong": "Should approve. Verified official channel.",
+    "guppi_hint": "",
+    "insight_tag": "Subtle credibility cues",
+    "comments": [
+      {
+        "username": "teacher_eli",
+        "content": "Thanks for clarifying.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Official DepEd updates",
+      "post_count": 4200,
+      "followers": "2.8M",
+      "following": "18",
+      "joined": "2018",
+      "engagement_ratio": "Consistent across advisories",
+      "bot_followers_pct": "3",
+      "follower_quality_note": "Mostly educators, parents, and institutions.",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Calendar of activities",
+          "likes": "2.4K"
+        },
+        {
+          "text": "Enrollment reminder",
+          "likes": "476"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l2_post_003",
+    "username": "HealthTipsAsia",
+    "handle": "@healthtips_asia",
+    "verified": false,
+    "account_age": "2 years",
+    "avatar_color": "#43A047",
+    "content": "Drinking lemon water each morning prevents dengue completely. Pass it on!",
+    "image": null,
+    "image_note": "No clinical chart or source link included.",
+    "likes": "7.3K",
+    "comments_count": "1.2K",
+    "shares": "4.8K",
+    "timestamp": "3 hours ago",
+    "is_fake": true,
+    "feedback_correct": "Absolute medical claim with no evidence.",
+    "feedback_wrong": "Should escalate - health claim: no proven prevention via lemon water alone.",
+    "guppi_hint": "That medical claim is pretty absolute…",
+    "insight_tag": "Posts with emotional language",
+    "comments": [
+      {
+        "username": "nurse_maya",
+        "content": "Please rely on dengue guidance from DOH.",
+        "is_bot": false
+      },
+      {
+        "username": "spa_bot91",
+        "content": "Life changing!!! Share!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Daily wellness tips",
+      "post_count": 310,
+      "followers": "55K",
+      "following": "402",
+      "joined": "2 years ago",
+      "engagement_ratio": "Engagement jumps on miracle-claim posts",
+      "bot_followers_pct": "51",
+      "follower_quality_note": "Many wellness-spam accounts with reused captions.",
+      "red_flags": [
+        "Absolute health guarantee",
+        "No expert credentials",
+        "Elevated bot-follower estimate"
+      ],
+      "recent_posts": [
+        {
+          "text": "Detox miracle!",
+          "likes": "12.1K"
+        },
+        {
+          "text": "Natural cures only",
+          "likes": "9.3K"
+        }
+      ]
+    }
+  }
+]

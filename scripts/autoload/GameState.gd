@@ -1,46 +1,92 @@
 extends Node
-## Global game state for Project GUPPI.
-## Tracks player performance, day progression, and per-post evidence usage.
+## Global run state for the MIL social feed game.
 
-signal day_changed(day: int)
-signal stats_updated
+signal level_changed(level: int)
+signal state_updated
 
-const MAX_DAYS := 5
+const MAX_LEVELS := 5
 
-var accuracy: float = 1.0
-var trust_score: float = 1.0
-var correction_tokens: int = 0
-var current_day: int = 1
-var guppi_drift: float = 0.0
-var evidence_checked_this_post: int = 0
+var current_level: int = 1
+var current_score: int = 0
+var total_posts_this_level: int = 0
+var correct_this_level: int = 0
+var guppi_accuracy_before: float = 0.55
+var guppi_accuracy_after: float = 0.55
+var hint_frequency: float = 1.0
+var miss_tags: Dictionary = {}
+var most_missed_insight: String = "None this round"
 
 
 func _ready() -> void:
-	reset_session()
+	reset_run()
 
 
-func reset_session() -> void:
-	accuracy = 1.0
-	trust_score = 1.0
-	correction_tokens = 0
-	current_day = 1
-	guppi_drift = 0.0
-	evidence_checked_this_post = 0
-	stats_updated.emit()
+func reset_run() -> void:
+	current_level = 1
+	current_score = 0
+	total_posts_this_level = 0
+	correct_this_level = 0
+	guppi_accuracy_before = 0.55
+	guppi_accuracy_after = 0.55
+	hint_frequency = 1.0
+	miss_tags.clear()
+	most_missed_insight = "None this round"
+	state_updated.emit()
 
 
-func reset_evidence_for_post() -> void:
-	evidence_checked_this_post = 0
+func begin_level(level: int, total_posts: int, level_hint_frequency: float) -> void:
+	current_level = clampi(level, 1, MAX_LEVELS)
+	total_posts_this_level = maxi(total_posts, 0)
+	correct_this_level = 0
+	current_score = 0
+	hint_frequency = clampf(level_hint_frequency, 0.0, 1.0)
+	guppi_accuracy_before = guppi_accuracy_after
+	miss_tags.clear()
+	most_missed_insight = "None this round"
+	level_changed.emit(current_level)
+	state_updated.emit()
 
 
-func register_evidence_checked() -> void:
-	evidence_checked_this_post += 1
+func register_label_result(is_correct: bool, miss_tag: String = "") -> void:
+	if is_correct:
+		correct_this_level += 1
+		current_score += 1
+	elif not miss_tag.is_empty():
+		miss_tags[miss_tag] = int(miss_tags.get(miss_tag, 0)) + 1
+	state_updated.emit()
 
 
-func start_new_day() -> void:
-	if current_day >= MAX_DAYS:
-		return
-	current_day += 1
-	evidence_checked_this_post = 0
-	day_changed.emit(current_day)
-	stats_updated.emit()
+func finalize_level_stats() -> void:
+	most_missed_insight = _compute_most_missed_insight()
+	if total_posts_this_level <= 0:
+		guppi_accuracy_after = guppi_accuracy_before
+	else:
+		var ratio := float(correct_this_level) / float(total_posts_this_level)
+		guppi_accuracy_after = clampf(guppi_accuracy_before * 0.7 + ratio * 0.3, 0.0, 1.0)
+	state_updated.emit()
+
+
+func has_next_level() -> bool:
+	return current_level < MAX_LEVELS
+
+
+func advance_to_next_level() -> bool:
+	if not has_next_level():
+		return false
+	current_level += 1
+	level_changed.emit(current_level)
+	state_updated.emit()
+	return true
+
+
+func _compute_most_missed_insight() -> String:
+	if miss_tags.is_empty():
+		return "None this round — strong work"
+	var best_tag := ""
+	var best_count := 0
+	for tag in miss_tags.keys():
+		var count := int(miss_tags[tag])
+		if count > best_count:
+			best_count = count
+			best_tag = str(tag)
+	return best_tag

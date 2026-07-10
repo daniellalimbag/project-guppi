@@ -1,0 +1,164 @@
+[
+  {
+    "id": "l5_post_001",
+    "username": "CommunityVoicePH",
+    "handle": "@communityvoiceph",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#AD1457",
+    "content": "Senator confirms cash aid tomorrow at 10AM. Bring valid ID. SOURCE: trusted insider.",
+    "image": null,
+    "image_note": "No event circular or letterhead attached.",
+    "likes": "33K",
+    "comments_count": "5.8K",
+    "shares": "12K",
+    "timestamp": "25 minutes ago",
+    "is_fake": true,
+    "feedback_correct": "Vague 'insider' source and high pressure share culture.",
+    "feedback_wrong": "Should escalate - no named source; unverified account.",
+    "guppi_hint": "Anonymous \"insider\" claims are hard to pin down.",
+    "insight_tag": "Unverified sources",
+    "comments": [
+      {
+        "username": "policy_reader",
+        "content": "No announcement on the official page yet.",
+        "is_bot": false
+      },
+      {
+        "username": "boost_bot",
+        "content": "True!!! Claim now!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Community news",
+      "post_count": 240,
+      "followers": "170K",
+      "following": "850",
+      "joined": "1 year ago",
+      "engagement_ratio": "Peaks only on anonymous-leak posts",
+      "bot_followers_pct": "46",
+      "follower_quality_note": "Amplification groups dominate shares.",
+      "red_flags": [
+        "Relies on unnamed 'insider'",
+        "Not an official government account",
+        "Elevated bot followers"
+      ],
+      "recent_posts": [
+        {
+          "text": "Insider info",
+          "likes": "13.9K"
+        },
+        {
+          "text": "They hide this",
+          "likes": "11.3K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l5_post_002",
+    "username": "Senate Public Affairs",
+    "handle": "@senateph",
+    "verified": true,
+    "account_age": "9 years",
+    "avatar_color": "#37474F",
+    "content": "Reminder: Only announcements posted by this verified account are official. No cash aid event tomorrow.",
+    "image": null,
+    "image_note": "Official public affairs notice.",
+    "likes": "27K",
+    "comments_count": "2.2K",
+    "shares": "10K",
+    "timestamp": "12 minutes ago",
+    "is_fake": false,
+    "feedback_correct": "Official clarification.",
+    "feedback_wrong": "Should approve from the verified Senate channel.",
+    "guppi_hint": "",
+    "insight_tag": "Subtle credibility cues",
+    "comments": [
+      {
+        "username": "citizen_j",
+        "content": "Clear and useful, thank you.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Official Senate communications",
+      "post_count": 5600,
+      "followers": "1.9M",
+      "following": "20",
+      "joined": "2015",
+      "engagement_ratio": "Consistent institutional pattern",
+      "bot_followers_pct": "3",
+      "follower_quality_note": "Civic orgs, journalists, and constituents.",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Committee briefing",
+          "likes": "1.8K"
+        },
+        {
+          "text": "Public notice",
+          "likes": "1K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l5_post_003",
+    "username": "PromoWinnerDesk",
+    "handle": "@promowinnerdesk",
+    "verified": false,
+    "account_age": "6 days",
+    "avatar_color": "#F9A825",
+    "content": "You won a tablet! Pay small shipping fee using GCash and enter the OTP to confirm.",
+    "image": null,
+    "image_note": "No prize documentation.",
+    "likes": "4.4K",
+    "comments_count": "900",
+    "shares": "1.3K",
+    "timestamp": "50 minutes ago",
+    "is_fake": true,
+    "feedback_correct": "Prize + fee + OTP is a known scam combo.",
+    "feedback_wrong": "Should escalate - prize scam. Real winners never ask for OTP.",
+    "guppi_hint": "Prize language plus a code request… curious combo.",
+    "insight_tag": "Scam / urgency tactics",
+    "comments": [
+      {
+        "username": "scam_watch",
+        "content": "Report this account.",
+        "is_bot": false
+      },
+      {
+        "username": "win_share99",
+        "content": "Congratulations to me!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Giveaways every day",
+      "post_count": 11,
+      "followers": "28K",
+      "following": "2100",
+      "joined": "6 days ago",
+      "engagement_ratio": "Brand-new account with huge follower jump",
+      "bot_followers_pct": "84",
+      "follower_quality_note": "Most followers are inactive number accounts.",
+      "red_flags": [
+        "Prize + shipping fee + OTP",
+        "Very new account",
+        "Extremely high bot-follower estimate"
+      ],
+      "recent_posts": [
+        {
+          "text": "You won!",
+          "likes": "9.8K"
+        },
+        {
+          "text": "Claim now",
+          "likes": "12.1K"
+        }
+      ]
+    }
+  }
+]

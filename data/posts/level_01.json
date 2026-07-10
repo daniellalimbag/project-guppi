@@ -1,0 +1,196 @@
+[
+  {
+    "id": "l1_post_001",
+    "username": "WellnessWithMaria_PH",
+    "handle": "@wellness_maria",
+    "verified": false,
+    "account_age": "3 weeks",
+    "avatar_color": "#E91E63",
+    "content": "DOCTORS DON'T WANT YOU TO KNOW THIS ONE DAILY TRICK...",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "No photo attached.",
+    "likes": "14.2K",
+    "comments_count": "832",
+    "shares": "8.7K",
+    "timestamp": "2 hours ago",
+    "is_fake": true,
+    "feedback_correct": "New unverified account + dangerous medical claim.",
+    "feedback_wrong": "Should escalate - new account, no medical source.",
+    "guppi_hint": "Pretty new account for that much reach…",
+    "insight_tag": "Posts with emotional language",
+    "comments": [
+      {
+        "username": "juan_reyes",
+        "content": "THIS IS DANGEROUS. Please consult a real doctor.",
+        "is_bot": false
+      },
+      {
+        "username": "health_facts_ph",
+        "content": "No clinical evidence supports this claim.",
+        "is_bot": false
+      },
+      {
+        "username": "user93821",
+        "content": "Amazing!! Sharing this now!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Natural healing advocate 🌿",
+      "post_count": 12,
+      "followers": "45.2K",
+      "following": "182",
+      "joined": "3 weeks ago",
+      "engagement_ratio": "1 like per 3 followers (suspiciously high for a new account)",
+      "bot_followers_pct": "68",
+      "follower_quality_note": "Many accounts follow dozens of wellness scam pages and never post original content.",
+      "red_flags": [
+        "Account created only 3 weeks ago",
+        "No verified badge",
+        "Follower count surged far faster than post history",
+        "High suspected bot-follower percentage"
+      ],
+      "recent_posts": [
+        {
+          "text": "Big Pharma doesn't want you healthy!",
+          "likes": "12.9K"
+        },
+        {
+          "text": "10 cures they're hiding from you",
+          "likes": "4.2K"
+        },
+        {
+          "text": "Natural is always better 💚",
+          "likes": "2.8K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l1_post_002",
+    "username": "MetroGovPH",
+    "handle": "@metrogovph",
+    "verified": true,
+    "account_age": "7 years",
+    "avatar_color": "#3F51B5",
+    "content": "City health office opens free vaccination slots this weekend. Register via the official portal.",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "No photo attached.",
+    "likes": "3.2K",
+    "comments_count": "219",
+    "shares": "1.4K",
+    "timestamp": "4 hours ago",
+    "is_fake": false,
+    "feedback_correct": "Verified official account and policy-aligned information.",
+    "feedback_wrong": "Should approve - official account and valid public service notice.",
+    "guppi_hint": "",
+    "insight_tag": "Subtle credibility cues",
+    "comments": [
+      {
+        "username": "anna_p",
+        "content": "Thanks! Registered my parents.",
+        "is_bot": false
+      },
+      {
+        "username": "clinic_nurse",
+        "content": "Schedule list matches city website update.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Official Metro Government updates",
+      "post_count": 1840,
+      "followers": "1.2M",
+      "following": "25",
+      "joined": "2019",
+      "engagement_ratio": "Healthy ratio for government announcements",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "Most followers are local citizens and civic organizations.",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Flood safety advisory for districts 3 and 5",
+          "likes": "1.2K"
+        },
+        {
+          "text": "Holiday traffic rerouting map",
+          "likes": "1.1K"
+        },
+        {
+          "text": "Public school enrollment reminder",
+          "likes": "1K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l1_post_003",
+    "username": "QuickCashRewards",
+    "handle": "@quickcashrewards",
+    "verified": false,
+    "account_age": "5 days",
+    "avatar_color": "#FF9800",
+    "content": "Claim instant scholarship grant NOW. Send your OTP code to verify eligibility!",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "No photo attached.",
+    "likes": "9.8K",
+    "comments_count": "2.1K",
+    "shares": "3.9K",
+    "timestamp": "30 minutes ago",
+    "is_fake": true,
+    "feedback_correct": "Urgent tone + OTP request is a scam pattern.",
+    "feedback_wrong": "Should escalate. Legit programs never ask for OTP in DMs.",
+    "guppi_hint": "Why would they need an OTP to claim something?",
+    "insight_tag": "Scam / urgency tactics",
+    "comments": [
+      {
+        "username": "study_help",
+        "content": "Don't send OTP to anyone. This is phishing.",
+        "is_bot": false
+      },
+      {
+        "username": "user82911",
+        "content": "Legit! I got paid already!!!",
+        "is_bot": true
+      },
+      {
+        "username": "user82912",
+        "content": "Legit! I got paid already!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "We help students get money fast 💸",
+      "post_count": 8,
+      "followers": "62.1K",
+      "following": "2,081",
+      "joined": "5 days ago",
+      "engagement_ratio": "Extremely inflated likes vs. account age",
+      "bot_followers_pct": "81",
+      "follower_quality_note": "Many follower names are random digit dumps and never reply uniquely.",
+      "red_flags": [
+        "Brand-new account (5 days)",
+        "Asks for OTP",
+        "Follows thousands of accounts while brand new",
+        "Very high bot-follower estimate"
+      ],
+      "recent_posts": [
+        {
+          "text": "Flash giveaway! DM now!",
+          "likes": "4.7K"
+        },
+        {
+          "text": "Limited slots only!!!",
+          "likes": "14.5K"
+        },
+        {
+          "text": "Winner list posted soon",
+          "likes": "4.1K"
+        }
+      ]
+    }
+  }
+]

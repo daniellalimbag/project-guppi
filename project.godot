@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Project GUPPI"
-run/main_scene="res://scenes/main/Main.tscn"
+run/main_scene="res://scenes/core/AppFlow.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameState="*res://scripts/autoload/GameState.gd"
+LevelManager="*res://scripts/autoload/LevelManager.gd"
 
 [display]
 

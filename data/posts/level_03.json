@@ -1,0 +1,165 @@
+[
+  {
+    "id": "l3_post_001",
+    "username": "MetroNewsAlert",
+    "handle": "@metro_news_alert",
+    "verified": false,
+    "account_age": "4 months",
+    "avatar_color": "#EF6C00",
+    "content": "VIDEO: Mayor just announced free rice for every household starting Friday.",
+    "image": "res://icon.svg",
+    "image_date_watermark": "Originally from a 2022 festival promo photo",
+    "image_note": "Old image reused for a brand-new claim.",
+    "likes": "21K",
+    "comments_count": "3.4K",
+    "shares": "9.1K",
+    "timestamp": "20 minutes ago",
+    "is_fake": true,
+    "feedback_correct": "High virality, no official confirmation, young account.",
+    "feedback_wrong": "Should escalate - no verifying source; comments conflict.",
+    "guppi_hint": "Check comments for conflicting reports.",
+    "insight_tag": "Unverified sources",
+    "comments": [
+      {
+        "username": "city_factcheck",
+        "content": "No such announcement on the city page.",
+        "is_bot": false
+      },
+      {
+        "username": "support_share",
+        "content": "Share before deleted!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Breaking news near you",
+      "post_count": 66,
+      "followers": "120K",
+      "following": "980",
+      "joined": "4 months ago",
+      "engagement_ratio": "Viral spikes without institutional sourcing",
+      "bot_followers_pct": "57",
+      "follower_quality_note": "Aggressive amplification networks dominate replies.",
+      "red_flags": [
+        "Unverified 'news' account",
+        "Reused old media",
+        "High suspected bot followers"
+      ],
+      "recent_posts": [
+        {
+          "text": "EXPLOSIVE update",
+          "likes": "2.9K"
+        },
+        {
+          "text": "They won't tell you this",
+          "likes": "2.9K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l3_post_002",
+    "username": "CityHallPress",
+    "handle": "@cityhall_press",
+    "verified": true,
+    "account_age": "6 years",
+    "avatar_color": "#283593",
+    "content": "Clarification: There is no free rice distribution scheduled this week. Please ignore viral posts.",
+    "image": null,
+    "image_note": "Text clarification from official press.",
+    "likes": "8.9K",
+    "comments_count": "1.1K",
+    "shares": "5.4K",
+    "timestamp": "10 minutes ago",
+    "is_fake": false,
+    "feedback_correct": "Official clarification account.",
+    "feedback_wrong": "Should approve: verified city press clarification.",
+    "guppi_hint": "",
+    "insight_tag": "Subtle credibility cues",
+    "comments": [
+      {
+        "username": "resident_ko",
+        "content": "Thanks for clarifying quickly.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Official city press office",
+      "post_count": 2100,
+      "followers": "890K",
+      "following": "32",
+      "joined": "2020",
+      "engagement_ratio": "Stable clarification traffic",
+      "bot_followers_pct": "5",
+      "follower_quality_note": "Local journalists and resident orgs dominate.",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Public works update",
+          "likes": "503"
+        },
+        {
+          "text": "Traffic advisory",
+          "likes": "1K"
+        }
+      ]
+    }
+  },
+  {
+    "id": "l3_post_003",
+    "username": "ScholarFundsNow",
+    "handle": "@scholarfundsnow",
+    "verified": false,
+    "account_age": "9 days",
+    "avatar_color": "#C62828",
+    "content": "Final reminder: click the form and enter your bank OTP to unlock grant release.",
+    "image": null,
+    "image_note": "No official agency stationery.",
+    "likes": "5.5K",
+    "comments_count": "777",
+    "shares": "2.2K",
+    "timestamp": "1 hour ago",
+    "is_fake": true,
+    "feedback_correct": "OTP + urgency is phishing.",
+    "feedback_wrong": "Should escalate - OTP requests are never legitimate grant steps.",
+    "guppi_hint": "That deadline-plus-code combo stands out.",
+    "insight_tag": "Scam / urgency tactics",
+    "comments": [
+      {
+        "username": "cyberwatch",
+        "content": "Do not share OTP.",
+        "is_bot": false
+      },
+      {
+        "username": "user_221",
+        "content": "I claimed already!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Student support",
+      "post_count": 14,
+      "followers": "33K",
+      "following": "1502",
+      "joined": "9 days ago",
+      "engagement_ratio": "Exploded in under two weeks",
+      "bot_followers_pct": "76",
+      "follower_quality_note": "Most followers never interact beyond copy-paste praise.",
+      "red_flags": [
+        "Brand-new account",
+        "Requests bank OTP",
+        "Very high bot followers"
+      ],
+      "recent_posts": [
+        {
+          "text": "LAST CALL",
+          "likes": "6.2K"
+        },
+        {
+          "text": "Limited slots",
+          "likes": "10.7K"
+        }
+      ]
+    }
+  }
+]
