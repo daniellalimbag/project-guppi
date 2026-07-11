@@ -1,5 +1,5 @@
 extends Node
-## Global run state for the MIL social feed game.
+## Global run state for the Tideline feed / Content Desk loop.
 
 signal level_changed(level: int)
 signal state_updated
