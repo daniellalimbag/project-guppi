@@ -1,14 +1,14 @@
 extends Control
 
 signal request_go_to_results
-signal request_go_to_title
-signal request_go_to_level_select
 
 const POST_CARD_SCENE := preload("res://scenes/feed/PostCard.tscn")
 const PROFILE_SCENE := preload("res://scenes/feed/ProfileScreen.tscn")
+const TIMER_WARN_SEC := 30.0
 
 @onready var _header_label: Label = %HeaderLabel
 @onready var _shift_label: Label = %ShiftLabel
+@onready var _timer_label: Label = %TimerLabel
 @onready var _progress_label: Label = %ProgressLabel
 @onready var _quota_bar: ProgressBar = %QuotaBar
 @onready var _feed_list: VBoxContainer = %FeedList
@@ -19,14 +19,13 @@ const PROFILE_SCENE := preload("res://scenes/feed/ProfileScreen.tscn")
 
 var _labeled_count: int = 0
 var _level_finished: bool = false
+var _timer_running: bool = false
 var _cards_by_id: Dictionary = {}
 var _profile_screen: ProfileScreen
 var _active_context_post: Dictionary = {}
 
 
 func _ready() -> void:
-	%BackToTitleButton.pressed.connect(func() -> void: request_go_to_title.emit())
-	%LevelsButton.pressed.connect(func() -> void: request_go_to_level_select.emit())
 	_queue_done_label.visible = false
 	_profile_screen = PROFILE_SCENE.instantiate()
 	_profile_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -40,10 +39,20 @@ func _ready() -> void:
 	tween.tween_property(self, "modulate:a", 1.0, 0.25)
 
 
+func _process(delta: float) -> void:
+	if not _timer_running or _level_finished:
+		return
+	GameState.time_remaining_sec = maxf(GameState.time_remaining_sec - delta, 0.0)
+	_update_timer_label()
+	if GameState.time_remaining_sec <= 0.0:
+		_on_timer_expired()
+
+
 func _load_feed() -> void:
 	_clear_feed()
 	_labeled_count = 0
 	_level_finished = false
+	_timer_running = false
 	_cards_by_id.clear()
 	_active_context_post = {}
 	_queue_done_label.visible = false
@@ -52,11 +61,13 @@ func _load_feed() -> void:
 	var posts := LevelManager.start_level(level)
 	var cfg: Dictionary = LevelManager.get_level_config(level)
 	var hint_frequency := float(cfg.get("hint_frequency", 1.0))
-	GameState.begin_level(level, posts.size(), hint_frequency)
+	var time_limit := float(cfg.get("time_limit_sec", 180.0))
+	GameState.begin_level(level, posts.size(), hint_frequency, time_limit)
 
-	_header_label.text = "Assigned feed"
+	_header_label.text = "Feed"
 	_shift_label.text = "Shift %d · %s" % [level, str(cfg.get("difficulty_note", "On shift"))]
 	_update_progress()
+	_update_timer_label()
 
 	if posts.is_empty():
 		_status_label.text = "No tickets in queue. Check assignment file."
@@ -73,9 +84,9 @@ func _load_feed() -> void:
 		card.collapsed.connect(_on_post_collapsed)
 		card.profile_requested.connect(_on_profile_requested)
 
-	_status_label.text = "Open profiles · read replies · tap G if stuck"
-	_guppi.set_prompt("Tap for assist")
+	_status_label.text = "Open profiles · read replies"
 	_refresh_active_context()
+	_timer_running = true
 
 
 func _clear_feed() -> void:
@@ -88,6 +99,17 @@ func _update_progress() -> void:
 	_progress_label.text = "%d / %d" % [_labeled_count, total]
 	_quota_bar.max_value = maxf(float(total), 1.0)
 	_quota_bar.value = float(_labeled_count)
+
+
+func _update_timer_label() -> void:
+	var remaining := int(ceil(GameState.time_remaining_sec))
+	var minutes := remaining / 60
+	var seconds := remaining % 60
+	_timer_label.text = "%d:%02d" % [minutes, seconds]
+	if GameState.time_remaining_sec <= TIMER_WARN_SEC:
+		_timer_label.add_theme_color_override("font_color", Color(0.95, 0.45, 0.42, 1))
+	else:
+		_timer_label.add_theme_color_override("font_color", Color(0.93, 0.95, 0.99, 1))
 
 
 func _on_post_labeled(_selected_real: bool, is_correct: bool, post_id: String) -> void:
@@ -128,16 +150,31 @@ func _on_post_collapsed() -> void:
 	if _labeled_count < GameState.total_posts_this_level:
 		_refresh_active_context()
 		return
-	_finish_level()
+	_finish_level(false)
 
 
-func _finish_level() -> void:
+func _on_timer_expired() -> void:
+	if _level_finished:
+		return
+	_finish_level(true)
+
+
+func _finish_level(did_time_out: bool) -> void:
 	if _level_finished:
 		return
 	_level_finished = true
-	GameState.finalize_level_stats()
+	_timer_running = false
+	GameState.time_remaining_sec = maxf(GameState.time_remaining_sec, 0.0)
+	GameState.finalize_level_stats(did_time_out)
 	_queue_done_label.visible = true
-	_status_label.text = "Quota filled. Sending shift report…"
+	if did_time_out:
+		_queue_done_label.text = "Time's up. Shift closed."
+		_queue_done_label.add_theme_color_override("font_color", Color(0.95, 0.55, 0.45, 1))
+		_status_label.text = "Sending shift report…"
+	else:
+		_queue_done_label.text = "Quota filled. Logging off…"
+		_queue_done_label.add_theme_color_override("font_color", Color(0.55, 0.86, 0.68, 1))
+		_status_label.text = "Quota filled. Sending shift report…"
 	await get_tree().create_timer(1.0).timeout
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 0.2)
@@ -167,7 +204,6 @@ func _on_profile_requested(post_data: Dictionary) -> void:
 func _on_profile_opened(post_data: Dictionary) -> void:
 	_active_context_post = post_data.duplicate(true)
 	_guppi.visible = true
-	_guppi.set_prompt("Tap for account scan")
 	var profile: Dictionary = post_data.get("profile", {})
 	var bot_raw := str(profile.get("bot_followers_pct", "")).strip_edges()
 	if not bot_raw.is_empty() and bot_raw != "Unknown" and int(bot_raw.trim_suffix("%")) >= 40:
@@ -175,7 +211,6 @@ func _on_profile_opened(post_data: Dictionary) -> void:
 
 
 func _on_profile_closed() -> void:
-	_guppi.set_prompt("Tap for assist")
 	_refresh_active_context()
 
 

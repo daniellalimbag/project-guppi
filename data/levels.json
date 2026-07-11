@@ -5,6 +5,7 @@
       "posts_shown": 8,
       "pool_size": 14,
       "hint_frequency": 1.0,
+      "time_limit_sec": 180,
       "difficulty_note": "Light morning queue"
     },
     {
@@ -12,6 +13,7 @@
       "posts_shown": 10,
       "pool_size": 16,
       "hint_frequency": 0.7,
+      "time_limit_sec": 160,
       "difficulty_note": "Standard afternoon load"
     },
     {
@@ -19,6 +21,7 @@
       "posts_shown": 12,
       "pool_size": 18,
       "hint_frequency": 0.5,
+      "time_limit_sec": 150,
       "difficulty_note": "Mixed / contested posts"
     },
     {
@@ -26,6 +29,7 @@
       "posts_shown": 14,
       "pool_size": 20,
       "hint_frequency": 0.3,
+      "time_limit_sec": 140,
       "difficulty_note": "Near-misses only"
     },
     {
@@ -33,6 +37,7 @@
       "posts_shown": 16,
       "pool_size": 22,
       "hint_frequency": 0.1,
+      "time_limit_sec": 130,
       "difficulty_note": "Peak traffic shift"
     }
   ]

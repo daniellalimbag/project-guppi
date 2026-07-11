@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scenes/core/TitleScreen.gd" id="1"]
 
@@ -31,18 +31,6 @@ content_margin_bottom = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_hover"]
 bg_color = Color(0.24, 0.62, 0.9, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghost"]
-bg_color = Color(0.14, 0.16, 0.22, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.28, 0.32, 0.4, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -117,12 +105,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_card")
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="DeviceLabel" type="Label" parent="MarginContainer/CenterContainer/Card/VBoxContainer"]
+[node name="LogoRect" type="TextureRect" parent="MarginContainer/CenterContainer/Card/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.55, 0.72, 0.9, 1)
-theme_override_font_sizes/font_size = 11
-text = "CONTENT DESK · DEVICE #047"
-horizontal_alignment = 1
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/CenterContainer/Card/VBoxContainer"]
 layout_mode = 2
@@ -142,7 +131,7 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_colors/font_color = Color(0.58, 0.64, 0.74, 1)
 theme_override_font_sizes/font_size = 12
-text = "You're on moderation. Clear your daily quota. Open profiles when something feels off. Ask G for a second look."
+text = "You're on moderation. Clear your daily quota. Open profiles when something feels off."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -154,14 +143,4 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_primary")
 theme_override_styles/hover = SubResource("StyleBoxFlat_primary_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_primary")
-text = "Clock in · Shift 1"
-
-[node name="LevelsButton" type="Button" parent="MarginContainer/CenterContainer/Card/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_ghost")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ghost")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ghost")
-text = "View shift roster"
+text = "Start Shift 1"

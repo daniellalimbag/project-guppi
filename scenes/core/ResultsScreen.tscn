@@ -125,12 +125,3 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ghost")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ghost")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ghost")
 text = "Redo this shift"
-
-[node name="LevelsButton" type="Button" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
-layout_mode = 2
-focus_mode = 0
-flat = true
-theme_override_colors/font_color = Color(0.65, 0.7, 0.8, 1)
-text = "Open roster"
