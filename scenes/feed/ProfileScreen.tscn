@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scenes/feed/ProfileScreen.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/ui/PhoneStatusBar.tscn" id="2"]
-[ext_resource type="Texture2D" path="res://assets/icons/icon_hamburger.png" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0.97, 0.98, 0.99, 1)
@@ -74,14 +73,9 @@ text = "ACCOUNT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuButton" type="Button" parent="Root/VBox/TopBar/TopRow"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(44, 44)
+[node name="TopRightPad" type="Control" parent="Root/VBox/TopBar/TopRow"]
+custom_minimum_size = Vector2(72, 44)
 layout_mode = 2
-focus_mode = 0
-flat = true
-icon = ExtResource("3")
-expand_icon = true
 
 [node name="Scroll" type="ScrollContainer" parent="Root/VBox"]
 layout_mode = 2
@@ -204,16 +198,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
 [node name="FooterRow" type="HBoxContainer" parent="Root/VBox/FooterBar"]
 layout_mode = 2
 
-[node name="FooterSpacer" type="Control" parent="Root/VBox/FooterBar/FooterRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ExitButton" type="Button" parent="Root/VBox/FooterBar/FooterRow"]
+[node name="MenuButton" type="Button" parent="Root/VBox/FooterBar/FooterRow"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 40)
 layout_mode = 2
 focus_mode = 0
 flat = true
 theme_override_colors/font_color = Color(0.08, 0.1, 0.12, 1)
-theme_override_font_sizes/font_size = 15
-text = "Give up"
+theme_override_font_sizes/font_size = 16
+text = "Menu"
+
+[node name="FooterSpacer" type="Control" parent="Root/VBox/FooterBar/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3

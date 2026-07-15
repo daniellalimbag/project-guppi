@@ -7,7 +7,7 @@ signal exit_requested
 signal menu_requested
 
 @onready var _back_button: Button = %BackButton
-@onready var _exit_button: Button = %ExitButton
+@onready var _menu_button: Button = %MenuButton
 @onready var _status_bar: PhoneStatusBar = %PhoneStatusBar
 @onready var _avatar_label: Label = %AvatarLabel
 @onready var _avatar_panel: PanelContainer = %AvatarPanel
@@ -28,12 +28,8 @@ func _ready() -> void:
 	visible = false
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_back_button.pressed.connect(_on_back)
-	_exit_button.pressed.connect(func() -> void: exit_requested.emit())
+	_menu_button.pressed.connect(func() -> void: menu_requested.emit())
 	_back_button.custom_minimum_size = Vector2(72, 44)
-	%MenuButton.text = ""
-	%MenuButton.pressed.connect(func() -> void: menu_requested.emit())
-	_style_menu_button(%MenuButton)
-	_exit_button.text = "Give up"
 	SettingsStore.settings_changed.connect(_apply_theme)
 	_apply_theme()
 
@@ -96,14 +92,6 @@ func get_post_data() -> Dictionary:
 
 func is_open() -> bool:
 	return visible
-
-
-func _style_menu_button(button: Button) -> void:
-	var empty := StyleBoxEmpty.new()
-	button.add_theme_stylebox_override("normal", empty)
-	button.add_theme_stylebox_override("hover", empty)
-	button.add_theme_stylebox_override("pressed", empty)
-	button.add_theme_constant_override("icon_max_width", 28)
 
 
 func _fill_recent_posts(items: Array) -> void:

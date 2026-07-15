@@ -3,24 +3,40 @@
 [ext_resource type="Script" path="res://scenes/core/FeedScreen.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/feed/GuppiCompanion.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/PhoneStatusBar.tscn" id="3"]
-[ext_resource type="Texture2D" path="res://assets/icons/icon_hamburger.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/icons/icon_quota_star.png" id="4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0.97, 0.98, 0.99, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
 bg_color = Color(0.22, 0.55, 0.58, 1)
-content_margin_left = 8
-content_margin_top = 6
-content_margin_right = 8
-content_margin_bottom = 6
+content_margin_left = 12
+content_margin_top = 8
+content_margin_right = 12
+content_margin_bottom = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_footer"]
 bg_color = Color(0.12, 0.42, 0.45, 1)
-content_margin_left = 16
-content_margin_top = 10
-content_margin_right = 16
-content_margin_bottom = 10
+content_margin_left = 20
+content_margin_top = 12
+content_margin_right = 20
+content_margin_bottom = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_search"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.78, 0.84, 0.86, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 12
+content_margin_top = 8
+content_margin_right = 12
+content_margin_bottom = 8
 
 [node name="FeedScreen" type="Control"]
 layout_mode = 3
@@ -60,31 +76,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_header")
 
 [node name="HeaderRow" type="HBoxContainer" parent="MainCol/HeaderBar"]
 layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="MenuButton" type="Button" parent="MainCol/HeaderBar/HeaderRow"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(44, 44)
-layout_mode = 2
-focus_mode = 0
-flat = true
-icon = ExtResource("4")
-expand_icon = true
-
-[node name="HeaderCenter" type="HBoxContainer" parent="MainCol/HeaderBar/HeaderRow"]
-layout_mode = 2
-size_flags_horizontal = 3
 alignment = 1
-theme_override_constants/separation = 8
 
-[node name="LogoRect" type="TextureRect" parent="MainCol/HeaderBar/HeaderRow/HeaderCenter"]
+[node name="LogoRect" type="TextureRect" parent="MainCol/HeaderBar/HeaderRow"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HeaderLabel" type="Label" parent="MainCol/HeaderBar/HeaderRow/HeaderCenter"]
+[node name="HeaderLabel" type="Label" parent="MainCol/HeaderBar/HeaderRow"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -92,19 +93,16 @@ theme_override_font_sizes/font_size = 18
 text = "SEA CORP."
 horizontal_alignment = 1
 
-[node name="HeaderRightPad" type="Control" parent="MainCol/HeaderBar/HeaderRow"]
-custom_minimum_size = Vector2(44, 44)
-layout_mode = 2
-
 [node name="SearchRow" type="MarginContainer" parent="MainCol"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 6
 
 [node name="SearchBox" type="PanelContainer" parent="MainCol/SearchRow"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_search")
 
 [node name="SearchInner" type="HBoxContainer" parent="MainCol/SearchRow/SearchBox"]
 layout_mode = 2
@@ -114,7 +112,7 @@ theme_override_constants/separation = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45, 0.5, 0.55, 1)
 theme_override_font_sizes/font_size = 14
-text = "Q"
+text = "⌕"
 
 [node name="SearchField" type="LineEdit" parent="MainCol/SearchRow/SearchBox/SearchInner"]
 unique_name_in_owner = true
@@ -124,23 +122,6 @@ focus_mode = 0
 placeholder_text = "Search"
 flat = true
 editable = false
-
-[node name="QuotaRow" type="MarginContainer" parent="MainCol"]
-layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
-
-[node name="QuotaAlign" type="HBoxContainer" parent="MainCol/QuotaRow"]
-layout_mode = 2
-alignment = 2
-
-[node name="ProgressLabel" type="Label" parent="MainCol/QuotaRow/QuotaAlign"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.25, 0.22, 1)
-theme_override_font_sizes/font_size = 13
-text = "QUOTA: 0/0"
 
 [node name="FeedScroll" type="ScrollContainer" parent="MainCol"]
 unique_name_in_owner = true
@@ -173,19 +154,68 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
 [node name="FooterRow" type="HBoxContainer" parent="MainCol/FooterBar"]
 layout_mode = 2
 
-[node name="FooterSpacer" type="Control" parent="MainCol/FooterBar/FooterRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="GiveUpButton" type="Button" parent="MainCol/FooterBar/FooterRow"]
+[node name="MenuButton" type="Button" parent="MainCol/FooterBar/FooterRow"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 40)
 layout_mode = 2
 focus_mode = 0
 flat = true
 theme_override_colors/font_color = Color(0.08, 0.1, 0.12, 1)
-theme_override_font_sizes/font_size = 15
-text = "Give up"
+theme_override_font_sizes/font_size = 16
+text = "Menu"
+
+[node name="FooterSpacer" type="Control" parent="MainCol/FooterBar/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuotaBadge" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 20
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 72.0
+offset_right = -4.0
+offset_bottom = 172.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="StarTexture" type="TextureRect" parent="QuotaBadge"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressLabel" type="Label" parent="QuotaBadge"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -16.0
+offset_right = 36.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.75, 0.18, 0.16, 1)
+theme_override_font_sizes/font_size = 11
+text = "QUOTA
+0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="OverlayHost" type="Control" parent="."]
 unique_name_in_owner = true

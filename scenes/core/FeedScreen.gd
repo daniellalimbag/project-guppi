@@ -7,9 +7,13 @@ const POST_CARD_SCENE := preload("res://scenes/feed/PostCard.tscn")
 const PROFILE_SCENE := preload("res://scenes/feed/ProfileScreen.tscn")
 const PAUSE_MENU_SCENE := preload("res://scenes/ui/PauseMenu.tscn")
 
+## Drop a custom star PNG here (or replace assets/icons/icon_quota_star.png).
+@export var quota_star_texture: Texture2D
+
 @onready var _status_bar: PhoneStatusBar = %PhoneStatusBar
 @onready var _header_label: Label = %HeaderLabel
 @onready var _progress_label: Label = %ProgressLabel
+@onready var _star_texture: TextureRect = %StarTexture
 @onready var _feed_list: VBoxContainer = %FeedList
 @onready var _queue_done_label: Label = %QueueDoneLabel
 @onready var _guppi: GuppiCompanion = %GuppiCompanion
@@ -25,10 +29,9 @@ var _active_context_post: Dictionary = {}
 
 func _ready() -> void:
 	_queue_done_label.visible = false
-	%GiveUpButton.pressed.connect(func() -> void: request_go_to_title.emit())
 	%MenuButton.pressed.connect(_on_menu_pressed)
-	%MenuButton.text = ""
-	_style_menu_button(%MenuButton)
+	if quota_star_texture != null:
+		_star_texture.texture = quota_star_texture
 	_profile_screen = PROFILE_SCENE.instantiate()
 	_profile_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_overlay_host.add_child(_profile_screen)
@@ -106,7 +109,7 @@ func _clear_feed() -> void:
 
 func _update_progress() -> void:
 	var total := GameState.total_posts_this_level
-	_progress_label.text = "QUOTA: %d/%d" % [_labeled_count, total]
+	_progress_label.text = "QUOTA\n%d/%d" % [_labeled_count, total]
 
 
 func _on_menu_pressed() -> void:
@@ -119,12 +122,10 @@ func _on_menu_pressed() -> void:
 		_pause_menu.open()
 
 
-func _style_menu_button(button: Button) -> void:
-	var empty := StyleBoxEmpty.new()
-	button.add_theme_stylebox_override("normal", empty)
-	button.add_theme_stylebox_override("hover", empty)
-	button.add_theme_stylebox_override("pressed", empty)
-	button.add_theme_constant_override("icon_max_width", 28)
+func set_quota_star(texture: Texture2D) -> void:
+	quota_star_texture = texture
+	if _star_texture:
+		_star_texture.texture = texture
 
 
 func _on_post_labeled(_selected_real: bool, is_correct: bool, post_id: String) -> void:
