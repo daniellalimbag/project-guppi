@@ -25,23 +25,15 @@ func _refresh_summary() -> void:
 	var arrow := "▲" if delta >= 0 else "▼"
 	var delta_text := "+%d" % delta if delta >= 0 else str(delta)
 	var level := GameState.current_level
-	var used_sec := int(round(GameState.time_limit_sec - GameState.time_remaining_sec))
-	var used_min := used_sec / 60
-	var used_rem := used_sec % 60
-	var time_line := "Time used\n%d:%02d" % [used_min, used_rem]
-	if GameState.timed_out:
-		time_line += " · timed out"
 
 	_header_label.text = "Shift %d report" % level
 	_summary_label.text = (
 		"Your hit rate\n%d / %d tickets cleared correctly\n\n"
-		+ "%s\n\n"
 		+ "GUPPI sync\n%d%% → %d%%  %s %s\n\n"
 		+ "Most missed pattern\n%s"
 	) % [
 		GameState.correct_this_level,
 		GameState.total_posts_this_level,
-		time_line,
 		before_pct,
 		after_pct,
 		arrow,

@@ -6,7 +6,7 @@ signal collapsed
 signal profile_requested(post_data: Dictionary)
 
 const COMMENTS_OPEN_HEIGHT := 240.0
-const COLLAPSE_DELAY := 0.9
+const COLLAPSE_DELAY := 1.15
 
 @onready var _avatar_button: Button = %AvatarButton
 @onready var _avatar_label: Label = %AvatarLabel
@@ -22,6 +22,8 @@ const COLLAPSE_DELAY := 0.9
 @onready var _real_button: Button = %LooksRealButton
 @onready var _flag_button: Button = %FlagThisButton
 @onready var _feedback_overlay: PanelContainer = %FeedbackOverlay
+@onready var _feedback_card: PanelContainer = %FeedbackCard
+@onready var _feedback_title: Label = %FeedbackTitle
 @onready var _feedback_label: Label = %FeedbackLabel
 @onready var _comments_section: PanelContainer = %CommentsSection
 @onready var _comments_list: VBoxContainer = %CommentsList
@@ -39,9 +41,13 @@ func _ready() -> void:
 	_username_button.custom_minimum_size.y = 28
 	_comments_toggle_button.custom_minimum_size = Vector2(44, 44)
 	_view_profile_button.custom_minimum_size = Vector2(0, 40)
-	_real_button.custom_minimum_size.y = 44
-	_flag_button.custom_minimum_size.y = 44
+	_real_button.custom_minimum_size = Vector2(40, 40)
+	_flag_button.custom_minimum_size = Vector2(40, 40)
 	_media_button.custom_minimum_size.y = 120
+	_style_icon_button(_real_button)
+	_style_icon_button(_flag_button)
+	_real_button.text = ""
+	_flag_button.text = ""
 
 	_avatar_button.pressed.connect(_request_profile)
 	_username_button.pressed.connect(_request_profile)
@@ -55,6 +61,15 @@ func _ready() -> void:
 	_feedback_overlay.visible = false
 	_media_detail.visible = false
 	_set_comments_height(0.0)
+
+
+func _style_icon_button(button: Button) -> void:
+	var empty := StyleBoxEmpty.new()
+	button.add_theme_stylebox_override("normal", empty)
+	button.add_theme_stylebox_override("hover", empty)
+	button.add_theme_stylebox_override("pressed", empty)
+	button.add_theme_stylebox_override("disabled", empty)
+	button.add_theme_constant_override("icon_max_width", 32)
 
 
 func set_post(data: Dictionary) -> void:
@@ -86,6 +101,8 @@ func _apply_post_data() -> void:
 	_likes_label.text = "♥  %s" % str(_post_data.get("likes", "0"))
 	_comments_toggle_button.text = "💬  %s" % str(_post_data.get("comments_count", "0"))
 	_shares_label.text = "↗  %s" % str(_post_data.get("shares", "0"))
+	_real_button.text = ""
+	_flag_button.text = ""
 	_view_profile_button.text = "Open account"
 
 	var avatar_color := Color(0.38, 0.42, 0.52, 1.0)
@@ -94,17 +111,17 @@ func _apply_post_data() -> void:
 		avatar_color = Color.from_string(avatar_color_hex, avatar_color)
 	var avatar_style := StyleBoxFlat.new()
 	avatar_style.bg_color = avatar_color
-	avatar_style.corner_radius_top_left = 24
-	avatar_style.corner_radius_top_right = 24
-	avatar_style.corner_radius_bottom_left = 24
-	avatar_style.corner_radius_bottom_right = 24
+	avatar_style.corner_radius_top_left = 6
+	avatar_style.corner_radius_top_right = 6
+	avatar_style.corner_radius_bottom_left = 6
+	avatar_style.corner_radius_bottom_right = 6
 	%AvatarPanel.add_theme_stylebox_override("panel", avatar_style)
 	_avatar_label.text = str(_post_data.get("username", "U")).left(1)
 
 	var has_image := _post_data.get("image") != null and str(_post_data.get("image", "")).strip_edges() != ""
 	_media_button.visible = true
 	_media_button.text = ""
-	%MediaPlaceholderLabel.text = "📷  Photo" if has_image else "📷  No photo attached"
+	%MediaPlaceholderLabel.text = "Photo" if has_image else "Photo"
 	_media_detail_label.text = _format_media_detail(has_image)
 	_rebuild_comments(_post_data.get("comments", []))
 
@@ -162,12 +179,12 @@ func _rebuild_comments(comments: Array) -> void:
 		var author := Label.new()
 		author.text = "@%s" % str(c.get("username", "user"))
 		author.add_theme_font_size_override("font_size", 12)
-		author.add_theme_color_override("font_color", Color(0.72, 0.76, 0.86, 1.0))
+		author.add_theme_color_override("font_color", Color(0.4, 0.45, 0.52, 1.0))
 
 		var body := Label.new()
 		body.text = str(c.get("content", ""))
 		body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		body.add_theme_color_override("font_color", Color(0.86, 0.9, 0.95, 1.0))
+		body.add_theme_color_override("font_color", Color(0.15, 0.17, 0.22, 1.0))
 
 		text_col.add_child(author)
 		text_col.add_child(body)
@@ -220,19 +237,50 @@ func _submit_label(selected_real: bool) -> void:
 
 
 func _show_feedback(is_correct: bool, message: String) -> void:
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.1, 0.42, 0.22, 0.92) if is_correct else Color(0.55, 0.14, 0.14, 0.92)
-	style.corner_radius_top_left = 12
-	style.corner_radius_top_right = 12
-	style.corner_radius_bottom_left = 12
-	style.corner_radius_bottom_right = 12
-	_feedback_overlay.add_theme_stylebox_override("panel", style)
+	# Dim the whole post lightly; keep the message card readable.
+	var overlay_style := StyleBoxFlat.new()
+	overlay_style.bg_color = Color(0.05, 0.07, 0.1, 0.45)
+	_feedback_overlay.add_theme_stylebox_override("panel", overlay_style)
+
+	var card_style := StyleBoxFlat.new()
+	if is_correct:
+		card_style.bg_color = Color(0.94, 0.98, 0.95, 1)
+		card_style.border_color = Color(0.25, 0.62, 0.45, 1)
+		_feedback_title.text = "Match"
+		_feedback_title.add_theme_color_override("font_color", Color(0.12, 0.45, 0.3, 1))
+		_feedback_label.add_theme_color_override("font_color", Color(0.18, 0.28, 0.24, 1))
+	else:
+		card_style.bg_color = Color(0.99, 0.95, 0.94, 1)
+		card_style.border_color = Color(0.78, 0.35, 0.32, 1)
+		_feedback_title.text = "Mismatch"
+		_feedback_title.add_theme_color_override("font_color", Color(0.65, 0.22, 0.2, 1))
+		_feedback_label.add_theme_color_override("font_color", Color(0.3, 0.2, 0.2, 1))
+	card_style.set_border_width_all(1)
+	card_style.set_corner_radius_all(14)
+	card_style.shadow_color = Color(0, 0, 0, 0.18)
+	card_style.shadow_size = 8
+	card_style.shadow_offset = Vector2(0, 3)
+	_feedback_card.add_theme_stylebox_override("panel", card_style)
+
+	_feedback_label.custom_minimum_size = Vector2(244, 0)
+	_feedback_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_feedback_label.text = message
+
 	_feedback_overlay.modulate.a = 0.0
+	_feedback_card.scale = Vector2(0.94, 0.94)
+	_feedback_card.pivot_offset = _feedback_card.size * 0.5
 	_feedback_overlay.visible = true
+	# Pivot after one frame once size is known.
+	await get_tree().process_frame
+	if not is_instance_valid(_feedback_card):
+		return
+	_feedback_card.pivot_offset = _feedback_card.size * 0.5
 
 	var tween := create_tween()
-	tween.tween_property(_feedback_overlay, "modulate:a", 1.0, 0.12)
+	tween.set_parallel(true)
+	tween.tween_property(_feedback_overlay, "modulate:a", 1.0, 0.14)
+	tween.tween_property(_feedback_card, "scale", Vector2.ONE, 0.18).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.set_parallel(false)
 	tween.tween_interval(COLLAPSE_DELAY)
 	tween.tween_callback(_collapse_card)
 

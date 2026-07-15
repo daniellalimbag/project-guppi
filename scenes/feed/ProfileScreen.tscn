@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scenes/feed/ProfileScreen.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/PhoneStatusBar.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/icons/icon_hamburger.png" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
-bg_color = Color(0.07, 0.08, 0.11, 1)
+bg_color = Color(0.97, 0.98, 0.99, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_top"]
-bg_color = Color(0.08, 0.09, 0.12, 1)
-border_width_bottom = 1
-border_color = Color(0.18, 0.2, 0.26, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+bg_color = Color(0.22, 0.55, 0.58, 1)
 content_margin_left = 8
 content_margin_top = 4
 content_margin_right = 8
 content_margin_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_footer"]
+bg_color = Color(0.12, 0.42, 0.45, 1)
+content_margin_left = 16
+content_margin_top = 10
+content_margin_right = 16
+content_margin_bottom = 10
 
 [node name="ProfileScreen" type="Control"]
 layout_mode = 3
@@ -37,33 +44,44 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
 layout_mode = 2
 theme_override_constants/separation = 0
 
+[node name="PhoneStatusBar" parent="Root/VBox" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="TopBar" type="PanelContainer" parent="Root/VBox"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_top")
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
 
 [node name="TopRow" type="HBoxContainer" parent="Root/VBox/TopBar"]
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="Root/VBox/TopBar/TopRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 44)
+layout_mode = 2
+focus_mode = 0
+flat = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "< Back"
+
+[node name="TopTitle" type="Label" parent="Root/VBox/TopBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "ACCOUNT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="Root/VBox/TopBar/TopRow"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(44, 44)
 layout_mode = 2
 focus_mode = 0
 flat = true
-text = "◀"
-
-[node name="TopTitle" type="Label" parent="Root/VBox/TopBar/TopRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
-text = "Account"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TopSpacer" type="Control" parent="Root/VBox/TopBar/TopRow"]
-custom_minimum_size = Vector2(44, 44)
-layout_mode = 2
+icon = ExtResource("3")
+expand_icon = true
 
 [node name="Scroll" type="ScrollContainer" parent="Root/VBox"]
 layout_mode = 2
@@ -74,135 +92,128 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 8
+theme_override_constants/margin_top = 14
 theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="Root/VBox/Scroll/Margin"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 12
 
-[node name="AvatarPanel" type="PanelContainer" parent="Root/VBox/Scroll/Margin/Content"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 96)
+[node name="IdentityRow" type="HBoxContainer" parent="Root/VBox/Scroll/Margin/Content"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/separation = 14
 
-[node name="AvatarLabel" type="Label" parent="Root/VBox/Scroll/Margin/Content/AvatarPanel"]
+[node name="AvatarPanel" type="PanelContainer" parent="Root/VBox/Scroll/Margin/Content/IdentityRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="AvatarLabel" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/AvatarPanel"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DisplayName" type="Label" parent="Root/VBox/Scroll/Margin/Content"]
-unique_name_in_owner = true
+[node name="IdentityMeta" type="VBoxContainer" parent="Root/VBox/Scroll/Margin/Content/IdentityRow"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Display Name"
-horizontal_alignment = 1
-
-[node name="HandleRow" type="HBoxContainer" parent="Root/VBox/Scroll/Margin/Content"]
-layout_mode = 2
-alignment = 1
+size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
-[node name="HandleLabel" type="Label" parent="Root/VBox/Scroll/Margin/Content/HandleRow"]
-unique_name_in_owner = true
+[node name="NameRow" type="HBoxContainer" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.66, 0.74, 1)
-theme_override_font_sizes/font_size = 14
-text = "@handle"
+theme_override_constants/separation = 6
 
-[node name="VerifiedBadge" type="Label" parent="Root/VBox/Scroll/Margin/Content/HandleRow"]
+[node name="DisplayName" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta/NameRow"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.45, 0.78, 0.95, 1)
+theme_override_colors/font_color = Color(0.12, 0.14, 0.18, 1)
+theme_override_font_sizes/font_size = 18
+text = "Display Name"
+
+[node name="VerifiedBadge" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta/NameRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.55, 0.75, 1)
 text = "✔"
 
-[node name="BioLabel" type="Label" parent="Root/VBox/Scroll/Margin/Content"]
+[node name="StatsRow" type="HBoxContainer" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PostsStat" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta/StatsRow"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.82, 0.86, 0.92, 1)
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.15, 0.17, 0.22, 1)
+theme_override_font_sizes/font_size = 12
+text = "0 Posts"
+
+[node name="FollowersStat" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta/StatsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.17, 0.22, 1)
+theme_override_font_sizes/font_size = 12
+text = "0 Followers"
+
+[node name="FollowingStat" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta/StatsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.17, 0.22, 1)
+theme_override_font_sizes/font_size = 12
+text = "0 Following"
+
+[node name="HandleJoined" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.45, 0.52, 1)
+theme_override_font_sizes/font_size = 12
+text = "@username · joined —"
 autowrap_mode = 3
 
-[node name="StatsRow" type="HBoxContainer" parent="Root/VBox/Scroll/Margin/Content"]
-layout_mode = 2
-alignment = 1
-theme_override_constants/separation = 24
-
-[node name="PostsStat" type="VBoxContainer" parent="Root/VBox/Scroll/Margin/Content/StatsRow"]
-layout_mode = 2
-
-[node name="PostsCount" type="Label" parent="Root/VBox/Scroll/Margin/Content/StatsRow/PostsStat"]
+[node name="BioLabel" type="Label" parent="Root/VBox/Scroll/Margin/Content/IdentityRow/IdentityMeta"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "0"
-horizontal_alignment = 1
-
-[node name="PostsCaption" type="Label" parent="Root/VBox/Scroll/Margin/Content/StatsRow/PostsStat"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.66, 0.74, 1)
-theme_override_font_sizes/font_size = 11
-text = "Posts"
-horizontal_alignment = 1
-
-[node name="FollowersStat" type="VBoxContainer" parent="Root/VBox/Scroll/Margin/Content/StatsRow"]
-layout_mode = 2
-
-[node name="FollowersCount" type="Label" parent="Root/VBox/Scroll/Margin/Content/StatsRow/FollowersStat"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "0"
-horizontal_alignment = 1
-
-[node name="FollowersCaption" type="Label" parent="Root/VBox/Scroll/Margin/Content/StatsRow/FollowersStat"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.66, 0.74, 1)
-theme_override_font_sizes/font_size = 11
-text = "Followers"
-horizontal_alignment = 1
-
-[node name="FollowingStat" type="VBoxContainer" parent="Root/VBox/Scroll/Margin/Content/StatsRow"]
-layout_mode = 2
-
-[node name="FollowingCount" type="Label" parent="Root/VBox/Scroll/Margin/Content/StatsRow/FollowingStat"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "0"
-horizontal_alignment = 1
-
-[node name="FollowingCaption" type="Label" parent="Root/VBox/Scroll/Margin/Content/StatsRow/FollowingStat"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.66, 0.74, 1)
-theme_override_font_sizes/font_size = 11
-text = "Following"
-horizontal_alignment = 1
-
-[node name="JoinedLabel" type="Label" parent="Root/VBox/Scroll/Margin/Content"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0.62, 0.66, 0.74, 1)
-theme_override_font_sizes/font_size = 12
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.2, 0.24, 0.3, 1)
+theme_override_font_sizes/font_size = 13
 autowrap_mode = 3
 
 [node name="Divider" type="ColorRect" parent="Root/VBox/Scroll/Margin/Content"]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
-color = Color(0.22, 0.24, 0.3, 1)
+color = Color(0.78, 0.82, 0.86, 1)
 
 [node name="RecentHeader" type="Label" parent="Root/VBox/Scroll/Margin/Content"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.12, 0.14, 0.18, 1)
+theme_override_font_sizes/font_size = 15
 text = "Posts"
 
 [node name="RecentList" type="VBoxContainer" parent="Root/VBox/Scroll/Margin/Content"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 12
+
+[node name="FooterBar" type="PanelContainer" parent="Root/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
+
+[node name="FooterRow" type="HBoxContainer" parent="Root/VBox/FooterBar"]
+layout_mode = 2
+
+[node name="FooterSpacer" type="Control" parent="Root/VBox/FooterBar/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExitButton" type="Button" parent="Root/VBox/FooterBar/FooterRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+focus_mode = 0
+flat = true
+theme_override_colors/font_color = Color(0.08, 0.1, 0.12, 1)
+theme_override_font_sizes/font_size = 15
+text = "Give up"

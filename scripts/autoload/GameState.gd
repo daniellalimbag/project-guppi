@@ -15,9 +15,6 @@ var guppi_accuracy_after: float = 0.55
 var hint_frequency: float = 1.0
 var miss_tags: Dictionary = {}
 var most_missed_insight: String = "None this round"
-var time_limit_sec: float = 180.0
-var time_remaining_sec: float = 180.0
-var timed_out: bool = false
 
 
 func _ready() -> void:
@@ -34,21 +31,15 @@ func reset_run() -> void:
 	hint_frequency = 1.0
 	miss_tags.clear()
 	most_missed_insight = "None this round"
-	time_limit_sec = 180.0
-	time_remaining_sec = 180.0
-	timed_out = false
 	state_updated.emit()
 
 
-func begin_level(level: int, total_posts: int, level_hint_frequency: float, level_time_limit: float = 180.0) -> void:
+func begin_level(level: int, total_posts: int, level_hint_frequency: float) -> void:
 	current_level = clampi(level, 1, MAX_LEVELS)
 	total_posts_this_level = maxi(total_posts, 0)
 	correct_this_level = 0
 	current_score = 0
 	hint_frequency = clampf(level_hint_frequency, 0.0, 1.0)
-	time_limit_sec = maxf(level_time_limit, 1.0)
-	time_remaining_sec = time_limit_sec
-	timed_out = false
 	guppi_accuracy_before = guppi_accuracy_after
 	miss_tags.clear()
 	most_missed_insight = "None this round"
@@ -65,8 +56,7 @@ func register_label_result(is_correct: bool, miss_tag: String = "") -> void:
 	state_updated.emit()
 
 
-func finalize_level_stats(did_time_out: bool = false) -> void:
-	timed_out = did_time_out
+func finalize_level_stats() -> void:
 	most_missed_insight = _compute_most_missed_insight()
 	if total_posts_this_level <= 0:
 		guppi_accuracy_after = guppi_accuracy_before
