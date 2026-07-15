@@ -1,39 +1,88 @@
 {
-  "levels": [
+  "difficulties": [
     {
-      "level": 1,
-      "posts_shown": 8,
-      "pool_size": 14,
-      "hint_frequency": 1.0,
-      "difficulty_note": "Light morning queue"
+      "id": "easy",
+      "label": "Easy",
+      "blurb": "Shorter queues and clearer tells. GUPPI talks a lot.",
+      "shifts": [
+        {
+          "shift": 1,
+          "posts_pool": "level_01",
+          "posts_shown": 6,
+          "hint_frequency": 1.0,
+          "note": "Morning intake"
+        },
+        {
+          "shift": 2,
+          "posts_pool": "level_02",
+          "posts_shown": 7,
+          "hint_frequency": 0.9,
+          "note": "Midday desk"
+        },
+        {
+          "shift": 3,
+          "posts_pool": "level_03",
+          "posts_shown": 8,
+          "hint_frequency": 0.8,
+          "note": "Closing queue"
+        }
+      ]
     },
     {
-      "level": 2,
-      "posts_shown": 10,
-      "pool_size": 16,
-      "hint_frequency": 0.7,
-      "difficulty_note": "Standard afternoon load"
+      "id": "medium",
+      "label": "Medium",
+      "blurb": "Standard load. Tips get quieter.",
+      "shifts": [
+        {
+          "shift": 1,
+          "posts_pool": "level_02",
+          "posts_shown": 8,
+          "hint_frequency": 0.7,
+          "note": "Open desk"
+        },
+        {
+          "shift": 2,
+          "posts_pool": "level_03",
+          "posts_shown": 10,
+          "hint_frequency": 0.55,
+          "note": "Contested hour"
+        },
+        {
+          "shift": 3,
+          "posts_pool": "level_04",
+          "posts_shown": 12,
+          "hint_frequency": 0.4,
+          "note": "Rush window"
+        }
+      ]
     },
     {
-      "level": 3,
-      "posts_shown": 12,
-      "pool_size": 18,
-      "hint_frequency": 0.5,
-      "difficulty_note": "Mixed / contested posts"
-    },
-    {
-      "level": 4,
-      "posts_shown": 14,
-      "pool_size": 20,
-      "hint_frequency": 0.3,
-      "difficulty_note": "Near-misses only"
-    },
-    {
-      "level": 5,
-      "posts_shown": 16,
-      "pool_size": 22,
-      "hint_frequency": 0.1,
-      "difficulty_note": "Peak traffic shift"
+      "id": "hard",
+      "label": "Hard",
+      "blurb": "Longer queues. Near-misses. Quiet GUPPI.",
+      "shifts": [
+        {
+          "shift": 1,
+          "posts_pool": "level_03",
+          "posts_shown": 10,
+          "hint_frequency": 0.35,
+          "note": "Deep current"
+        },
+        {
+          "shift": 2,
+          "posts_pool": "level_04",
+          "posts_shown": 12,
+          "hint_frequency": 0.2,
+          "note": "Near-miss flood"
+        },
+        {
+          "shift": 3,
+          "posts_pool": "level_05",
+          "posts_shown": 14,
+          "hint_frequency": 0.1,
+          "note": "Peak traffic"
+        }
+      ]
     }
   ]
 }

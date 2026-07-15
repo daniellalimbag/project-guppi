@@ -1,7 +1,7 @@
 extends Control
 class_name PhoneStatusBar
 
-## Top phone chrome: system clock · SHIFT N · status icons.
+## Top phone chrome: system clock · DIFFICULTY · SHIFT N · status icons.
 
 @onready var _clock_label: Label = %ClockLabel
 @onready var _shift_label: Label = %ShiftLabel
@@ -14,12 +14,24 @@ func _ready() -> void:
 	timer.autostart = true
 	timer.timeout.connect(_refresh_clock)
 	add_child(timer)
-	set_shift(GameState.current_level)
+	set_shift_status(GameState.shift_status_text())
+	SettingsStore.settings_changed.connect(_apply_theme)
+	_apply_theme()
+
+
+func set_shift_status(text: String) -> void:
+	if _shift_label:
+		_shift_label.text = text
 
 
 func set_shift(level: int) -> void:
-	if _shift_label:
-		_shift_label.text = "SHIFT %d" % maxi(level, 1)
+	set_shift_status("SHIFT %d" % maxi(level, 1))
+
+
+func _apply_theme() -> void:
+	var palette := SettingsStore.get_palette()
+	var dark: Color = palette.get("accent_dark", Color(0.12, 0.42, 0.45))
+	add_theme_stylebox_override("panel", SettingsStore.make_flat_style(dark, 0, 6.0))
 
 
 func _refresh_clock() -> void:

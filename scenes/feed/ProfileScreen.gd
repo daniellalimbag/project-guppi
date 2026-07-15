@@ -4,6 +4,7 @@ class_name ProfileScreen
 signal closed
 signal opened(post_data: Dictionary)
 signal exit_requested
+signal menu_requested
 
 @onready var _back_button: Button = %BackButton
 @onready var _exit_button: Button = %ExitButton
@@ -30,7 +31,25 @@ func _ready() -> void:
 	_exit_button.pressed.connect(func() -> void: exit_requested.emit())
 	_back_button.custom_minimum_size = Vector2(72, 44)
 	%MenuButton.text = ""
+	%MenuButton.pressed.connect(func() -> void: menu_requested.emit())
+	_style_menu_button(%MenuButton)
 	_exit_button.text = "Give up"
+	SettingsStore.settings_changed.connect(_apply_theme)
+	_apply_theme()
+
+
+func _apply_theme() -> void:
+	var palette := SettingsStore.get_palette()
+	var screen: Color = palette.get("screen", Color(0.97, 0.98, 0.99))
+	var accent: Color = palette.get("accent", Color(0.22, 0.55, 0.58))
+	var accent_dark: Color = palette.get("accent_dark", Color(0.12, 0.42, 0.45))
+	$Root.add_theme_stylebox_override("panel", SettingsStore.make_flat_style(screen))
+	$Root/VBox/TopBar.add_theme_stylebox_override(
+		"panel", SettingsStore.make_flat_style(accent, 0, 6.0)
+	)
+	$Root/VBox/FooterBar.add_theme_stylebox_override(
+		"panel", SettingsStore.make_flat_style(accent_dark, 0, 10.0)
+	)
 
 
 func open(post_data: Dictionary) -> void:
@@ -49,7 +68,7 @@ func open(post_data: Dictionary) -> void:
 	_followers_stat.text = "%s Followers" % str(profile.get("followers", "0"))
 	_following_stat.text = "%s Following" % str(profile.get("following", "0"))
 	_handle_joined.text = "%s · joined %s" % [handle, joined]
-	_status_bar.set_shift(GameState.current_level)
+	_status_bar.set_shift_status(GameState.shift_status_text())
 
 	var avatar_color := Color(0.38, 0.42, 0.52, 1.0)
 	var hex := str(_post_data.get("avatar_color", ""))
@@ -77,6 +96,14 @@ func get_post_data() -> Dictionary:
 
 func is_open() -> bool:
 	return visible
+
+
+func _style_menu_button(button: Button) -> void:
+	var empty := StyleBoxEmpty.new()
+	button.add_theme_stylebox_override("normal", empty)
+	button.add_theme_stylebox_override("hover", empty)
+	button.add_theme_stylebox_override("pressed", empty)
+	button.add_theme_constant_override("icon_max_width", 28)
 
 
 func _fill_recent_posts(items: Array) -> void:

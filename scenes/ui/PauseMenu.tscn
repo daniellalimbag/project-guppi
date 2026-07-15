@@ -1,0 +1,157 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/PauseMenu.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.97, 0.98, 0.99, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22, 0.55, 0.58, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+content_margin_left = 20
+content_margin_top = 20
+content_margin_right = 20
+content_margin_bottom = 20
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+mouse_filter = 0
+z_index = 80
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.06, 0.08, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Center/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.42, 0.45, 1)
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Resume"
+
+[node name="HowToButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "How to play"
+
+[node name="SettingsButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Settings"
+
+[node name="GiveUpButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Give up"
+
+[node name="HowToPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="HowToDim" type="ColorRect" parent="HowToPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.06, 0.08, 0.6)
+
+[node name="HowToCenter" type="CenterContainer" parent="HowToPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HowToCard" type="PanelContainer" parent="HowToPanel/HowToCenter"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="HowToVBox" type="VBoxContainer" parent="HowToPanel/HowToCenter/HowToCard"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HowToTitle" type="Label" parent="HowToPanel/HowToCenter/HowToCard/HowToVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.42, 0.45, 1)
+theme_override_font_sizes/font_size = 18
+text = "How to play"
+horizontal_alignment = 1
+
+[node name="HowToBody" type="Label" parent="HowToPanel/HowToCenter/HowToCard/HowToVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.24, 0.3, 1)
+theme_override_font_sizes/font_size = 13
+text = "Clear your shift quota by reviewing each post.
+
+• Tap an account photo to open their profile
+• Read comments and past posts for clues
+• Tap GUPPI for a quiet tip when stuck
+• Checkmark = approve · Flag = escalate"
+autowrap_mode = 3
+
+[node name="HowToClose" type="Button" parent="HowToPanel/HowToCenter/HowToCard/HowToVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Got it"

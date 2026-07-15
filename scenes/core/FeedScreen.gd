@@ -5,6 +5,7 @@ signal request_go_to_title
 
 const POST_CARD_SCENE := preload("res://scenes/feed/PostCard.tscn")
 const PROFILE_SCENE := preload("res://scenes/feed/ProfileScreen.tscn")
+const PAUSE_MENU_SCENE := preload("res://scenes/ui/PauseMenu.tscn")
 
 @onready var _status_bar: PhoneStatusBar = %PhoneStatusBar
 @onready var _header_label: Label = %HeaderLabel
@@ -18,6 +19,7 @@ var _labeled_count: int = 0
 var _level_finished: bool = false
 var _cards_by_id: Dictionary = {}
 var _profile_screen: ProfileScreen
+var _pause_menu: PauseMenu
 var _active_context_post: Dictionary = {}
 
 
@@ -33,11 +35,32 @@ func _ready() -> void:
 	_profile_screen.closed.connect(_on_profile_closed)
 	_profile_screen.opened.connect(_on_profile_opened)
 	_profile_screen.exit_requested.connect(func() -> void: request_go_to_title.emit())
+	_profile_screen.menu_requested.connect(_on_menu_pressed)
+	_pause_menu = PAUSE_MENU_SCENE.instantiate()
+	_pause_menu.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(_pause_menu)
+	_pause_menu.give_up_requested.connect(func() -> void: request_go_to_title.emit())
 	_guppi.hint_requested.connect(_on_guppi_hint_requested)
+	SettingsStore.settings_changed.connect(_apply_theme)
+	_apply_theme()
 	modulate.a = 0.0
 	_load_feed()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 0.25)
+
+
+func _apply_theme() -> void:
+	var palette := SettingsStore.get_palette()
+	var screen: Color = palette.get("screen", Color(0.97, 0.98, 0.99))
+	var accent: Color = palette.get("accent", Color(0.22, 0.55, 0.58))
+	var accent_dark: Color = palette.get("accent_dark", Color(0.12, 0.42, 0.45))
+	$Background.add_theme_stylebox_override("panel", SettingsStore.make_flat_style(screen))
+	$MainCol/HeaderBar.add_theme_stylebox_override(
+		"panel", SettingsStore.make_flat_style(accent, 0, 6.0)
+	)
+	$MainCol/FooterBar.add_theme_stylebox_override(
+		"panel", SettingsStore.make_flat_style(accent_dark, 0, 10.0)
+	)
 
 
 func _load_feed() -> void:
@@ -48,14 +71,15 @@ func _load_feed() -> void:
 	_active_context_post = {}
 	_queue_done_label.visible = false
 
-	var level := maxi(GameState.current_level, 1)
-	var posts := LevelManager.start_level(level)
-	var cfg: Dictionary = LevelManager.get_level_config(level)
+	var difficulty := GameState.current_difficulty
+	var shift := maxi(GameState.current_shift, 1)
+	var posts := LevelManager.start_shift(difficulty, shift)
+	var cfg: Dictionary = LevelManager.get_shift_config(difficulty, shift)
 	var hint_frequency := float(cfg.get("hint_frequency", 1.0))
-	GameState.begin_level(level, posts.size(), hint_frequency)
+	GameState.begin_level(difficulty, shift, posts.size(), hint_frequency)
 
 	_header_label.text = "SEA CORP."
-	_status_bar.set_shift(level)
+	_status_bar.set_shift_status(GameState.shift_status_text())
 	_update_progress()
 
 	if posts.is_empty():
@@ -86,8 +110,13 @@ func _update_progress() -> void:
 
 
 func _on_menu_pressed() -> void:
-	# Reserved for pause / options later.
-	pass
+	if _level_finished:
+		return
+	if _pause_menu.is_open():
+		_pause_menu.close()
+	else:
+		_pause_menu.move_to_front()
+		_pause_menu.open()
 
 
 func _style_menu_button(button: Button) -> void:
@@ -186,6 +215,9 @@ func _on_profile_closed() -> void:
 
 func _on_guppi_hint_requested() -> void:
 	_refresh_active_context()
+	if not SettingsStore.guppi_tips_enabled:
+		_guppi.show_hint("", "Tips are off — turn them on in Settings.")
+		return
 	if _active_context_post.is_empty():
 		_guppi.show_hint("", "Nothing queued — open a post or profile.")
 		return

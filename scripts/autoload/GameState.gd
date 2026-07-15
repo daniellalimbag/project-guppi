@@ -1,12 +1,11 @@
 extends Node
 ## Global run state for the Tideline feed loop.
 
-signal level_changed(level: int)
+signal level_changed(difficulty_id: String, shift: int)
 signal state_updated
 
-const MAX_LEVELS := 5
-
-var current_level: int = 1
+var current_difficulty: String = "easy"
+var current_shift: int = 1
 var current_score: int = 0
 var total_posts_this_level: int = 0
 var correct_this_level: int = 0
@@ -22,7 +21,8 @@ func _ready() -> void:
 
 
 func reset_run() -> void:
-	current_level = 1
+	current_difficulty = "easy"
+	current_shift = 1
 	current_score = 0
 	total_posts_this_level = 0
 	correct_this_level = 0
@@ -34,8 +34,21 @@ func reset_run() -> void:
 	state_updated.emit()
 
 
-func begin_level(level: int, total_posts: int, level_hint_frequency: float) -> void:
-	current_level = clampi(level, 1, MAX_LEVELS)
+func get_max_shifts() -> int:
+	return maxi(LevelManager.get_shift_count(current_difficulty), 1)
+
+
+func start_at_shift(difficulty_id: String, shift: int) -> void:
+	reset_run()
+	current_difficulty = difficulty_id
+	current_shift = clampi(shift, 1, get_max_shifts())
+	level_changed.emit(current_difficulty, current_shift)
+	state_updated.emit()
+
+
+func begin_level(difficulty_id: String, shift: int, total_posts: int, level_hint_frequency: float) -> void:
+	current_difficulty = difficulty_id
+	current_shift = clampi(shift, 1, get_max_shifts())
 	total_posts_this_level = maxi(total_posts, 0)
 	correct_this_level = 0
 	current_score = 0
@@ -43,7 +56,7 @@ func begin_level(level: int, total_posts: int, level_hint_frequency: float) -> v
 	guppi_accuracy_before = guppi_accuracy_after
 	miss_tags.clear()
 	most_missed_insight = "None this round"
-	level_changed.emit(current_level)
+	level_changed.emit(current_difficulty, current_shift)
 	state_updated.emit()
 
 
@@ -67,16 +80,21 @@ func finalize_level_stats() -> void:
 
 
 func has_next_level() -> bool:
-	return current_level < MAX_LEVELS
+	return current_shift < get_max_shifts()
 
 
 func advance_to_next_level() -> bool:
 	if not has_next_level():
 		return false
-	current_level += 1
-	level_changed.emit(current_level)
+	current_shift += 1
+	level_changed.emit(current_difficulty, current_shift)
 	state_updated.emit()
 	return true
+
+
+func shift_status_text() -> String:
+	var label := LevelManager.get_difficulty_label(current_difficulty).to_upper()
+	return "%s · SHIFT %d" % [label, maxi(current_shift, 1)]
 
 
 func _compute_most_missed_insight() -> String:
