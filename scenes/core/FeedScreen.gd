@@ -43,8 +43,10 @@ func _ready() -> void:
 	_pause_menu.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(_pause_menu)
 	_pause_menu.give_up_requested.connect(func() -> void: request_go_to_title.emit())
+	_pause_menu.resume_requested.connect(func() -> void: GameState.resume_shift_clock())
 	_guppi.hint_requested.connect(_on_guppi_hint_requested)
 	SettingsStore.settings_changed.connect(_apply_theme)
+	GameState.shift_time_up.connect(_on_shift_time_up)
 	_apply_theme()
 	modulate.a = 0.0
 	_load_feed()
@@ -117,9 +119,21 @@ func _on_menu_pressed() -> void:
 		return
 	if _pause_menu.is_open():
 		_pause_menu.close()
+		GameState.resume_shift_clock()
 	else:
+		GameState.pause_shift_clock()
 		_pause_menu.move_to_front()
 		_pause_menu.open()
+
+
+func _on_shift_time_up() -> void:
+	if _level_finished:
+		return
+	if _pause_menu != null and _pause_menu.is_open():
+		_pause_menu.close()
+	_queue_done_label.visible = true
+	_queue_done_label.text = "Shift over — clocked out at 5:00 PM."
+	_finish_level()
 
 
 func set_quota_star(texture: Texture2D) -> void:

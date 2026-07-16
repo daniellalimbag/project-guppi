@@ -1,162 +1,1392 @@
 [
   {
-    "id": "l2_post_001",
-    "username": "NeighborhoodWatchLocal",
-    "handle": "@nbhd_watch",
-    "verified": false,
-    "account_age": "11 months",
-    "avatar_color": "#9C27B0",
-    "content": "Heard from a friend that school is cancelled tomorrow due to flooding. Share so parents know!",
-    "image": null,
-    "image_note": "No primary source document.",
-    "likes": "2.1K",
-    "comments_count": "480",
-    "shares": "1.6K",
-    "timestamp": "1 hour ago",
-    "is_fake": true,
-    "feedback_correct": "Secondhand rumor with no official source.",
-    "feedback_wrong": "Should escalate - hearsay, no school/gov confirmation.",
-    "guppi_hint": "Look for an official account or named source.",
-    "insight_tag": "Unverified sources",
+    "id": "d2_legit_005",
+    "username": "Angelfish Re-reef network",
+    "handle": "@angelfish_rereef_network",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#607D8B",
+    "content": "Our community kitchen is cooking for the families of workers affected by the building collapse. We need algae, canned plankton, and bottled seawater donations. Drop-off at Angelfish City seaweed court, 7am-6pm daily. Thank you Angelfish!",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of rescue operations at the site",
+    "likes": "3204",
+    "comments_count": "64",
+    "shares": "1120",
+    "timestamp": "07/13/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "https://en.wikipedia.org/wiki/2026_Sanriku_earthquake",
     "comments": [
       {
-        "username": "parent_ria",
-        "content": "Can someone confirm this?",
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
         "is_bot": false
       },
       {
-        "username": "user_8821",
-        "content": "True!! Share now!!!",
-        "is_bot": true
-      }
-    ],
-    "profile": {
-      "bio": "Local tips and alerts",
-      "post_count": 84,
-      "followers": "9.4K",
-      "following": "1201",
-      "joined": "11 months ago",
-      "engagement_ratio": "Spikes only on fear posts",
-      "bot_followers_pct": "42",
-      "follower_quality_note": "Mixed: some neighbors, many one-post amplifers.",
-      "red_flags": [
-        "No verified badge",
-        "Claims based on 'a friend said'",
-        "Moderate bot-follower percentage"
-      ],
-      "recent_posts": [
-        {
-          "text": "Traffic is crazy today",
-          "likes": "13.5K"
-        },
-        {
-          "text": "Beware of strangers!!!",
-          "likes": "14.5K"
-        }
-      ]
-    }
-  },
-  {
-    "id": "l2_post_002",
-    "username": "DepEd Official",
-    "handle": "@deped_ph",
-    "verified": true,
-    "account_age": "8 years",
-    "avatar_color": "#1565C0",
-    "content": "Advisory: Classes remain as scheduled tomorrow. Follow only official announcements.",
-    "image": null,
-    "image_note": "Official clarification post.",
-    "likes": "18K",
-    "comments_count": "920",
-    "shares": "6.1K",
-    "timestamp": "45 minutes ago",
-    "is_fake": false,
-    "feedback_correct": "Verified agency account with clear advisory.",
-    "feedback_wrong": "Should approve. Verified official channel.",
-    "guppi_hint": "",
-    "insight_tag": "Subtle credibility cues",
-    "comments": [
-      {
-        "username": "teacher_eli",
-        "content": "Thanks for clarifying.",
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
         "is_bot": false
       }
     ],
     "profile": {
-      "bio": "Official DepEd updates",
-      "post_count": 4200,
-      "followers": "2.8M",
-      "following": "18",
-      "joined": "2018",
-      "engagement_ratio": "Consistent across advisories",
-      "bot_followers_pct": "3",
-      "follower_quality_note": "Mostly educators, parents, and institutions.",
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
       "red_flags": [],
       "recent_posts": [
         {
-          "text": "Calendar of activities",
-          "likes": "2.4K"
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Enrollment reminder",
-          "likes": "476"
+          "text": "Stay safe out there.",
+          "likes": "84"
         }
       ]
     }
   },
   {
-    "id": "l2_post_003",
-    "username": "HealthTipsAsia",
-    "handle": "@healthtips_asia",
+    "id": "d2_legit_006",
+    "username": "GuppyGirl_Jona",
+    "handle": "@guppygirl_jona",
     "verified": false,
-    "account_age": "2 years",
-    "avatar_color": "#43A047",
-    "content": "Drinking lemon water each morning prevents dengue completely. Pass it on!",
-    "image": null,
-    "image_note": "No clinical chart or source link included.",
-    "likes": "7.3K",
-    "comments_count": "1.2K",
-    "shares": "4.8K",
-    "timestamp": "3 hours ago",
-    "is_fake": true,
-    "feedback_correct": "Absolute medical claim with no evidence.",
-    "feedback_wrong": "Should escalate - health claim: no proven prevention via lemon water alone.",
-    "guppi_hint": "That medical claim is pretty absolute…",
-    "insight_tag": "Posts with emotional language",
+    "account_age": "1 year",
+    "avatar_color": "#FF9800",
+    "content": "My sibling was one of the workers pulled out alive from the building collapse, but he broke both fins and can't work for months. We're a family of five depending on his salary. Any help, even just sharing this post, means the world to us right now.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of sibling in a hospital bed, injury visible",
+    "likes": "4127",
+    "comments_count": "82",
+    "shares": "1890",
+    "timestamp": "07/13/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
     "comments": [
       {
-        "username": "nurse_maya",
-        "content": "Please rely on dengue guidance from DOH.",
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
         "is_bot": false
       },
       {
-        "username": "spa_bot91",
-        "content": "Life changing!!! Share!!",
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_007",
+    "username": "OctopusOwen",
+    "handle": "@octopusowen",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#E91E63",
+    "content": "Volunteered at the relief ops earlier, so many people showed up just to help in whatever way they could. Someone brought homemade porridge, someone else brought water, one person even offered their house for volunteers to rest in. Even in the middle of all this grief, our sense of community really shows.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of Volunteers distributing food and water",
+    "likes": "876",
+    "comments_count": "17",
+    "shares": "745",
+    "timestamp": "07/14/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_008",
+    "username": "StarfishSteven",
+    "handle": "@starfishsteven",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#8BC34A",
+    "content": "It's scary to think about, I used to pass by that building all the time on my way to work. The rumbling when it collapsed was so loud, we felt it even two streets away. Please be careful, especially those near construction sites.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo taken from a nearby street showing dust clouds and a collapsed building",
+    "likes": "2654",
+    "comments_count": "53",
+    "shares": "1033",
+    "timestamp": "07/14/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_009",
+    "username": "NHK Fish Watch",
+    "handle": "@nhk_fish_watch",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#00BCD4",
+    "content": "BREAKING: A magnitude 7.4 earthquake struck off the coast of Codport, Herring Prefecture at 4:53PM local time today, triggering tsunami warnigns of up to 3 meters for Herring, Salmonori, and central Halibutdo. Follow for Updates",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Map graphic showing the epicenter and warning zones",
+    "likes": "5412",
+    "comments_count": "108",
+    "shares": "3201",
+    "timestamp": "07/14",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_010",
+    "username": "TunaTimes",
+    "handle": "@tunatimes",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#E91E63",
+    "content": "UPDATE: Tsunami waves have made landfall along the Sardinku coast, peaking at 80cm at Krillji Port. At least 10 people injured across Halibutdo, Salmonori, and Herring prefectures. Evacuation orders remain in effect for nearly 176,000 residents. Weather Bureau warns of possible aftershocks.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of waves at the port",
+    "likes": "4876",
+    "comments_count": "97",
+    "shares": "2540",
+    "timestamp": "07/15/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_011",
+    "username": "Weather Bureau Fish Alert",
+    "handle": "@weather_bureau_fish_aler",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#FF9800",
+    "content": "TSUNAMI WARNING: Waves of up to 3 meters expected along the Herring, Salmonori, and central Halibutdo coastlines. Residents in low-lying and coastal areas are urged to evacuate to higher ground immediately. Do not wait for visual confirmation of waves. Stay tuned for updates.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Graphic showing Tsunami warning zones with alert siren icon (something similar to pubmats we see from citigovs when there's a typhoon)",
+    "likes": "6203",
+    "comments_count": "124",
+    "shares": "4015",
+    "timestamp": "07/14/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_012",
+    "username": "MackerelMiho",
+    "handle": "@mackerelmiho",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#E91E63",
+    "content": "Felt the whole apartment shake for what felt like forever. Grabbed my snail and ran straight to the evacuation site up the hill.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of fishes gathered at a hilldside evacuation",
+    "likes": "3214",
+    "comments_count": "64",
+    "shares": "1432",
+    "timestamp": "07/14/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_legit_013",
+    "username": "KenKoi",
+    "handle": "@kenkoi",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#E91E63",
+    "content": "Our fishing cooperative in Krillji Port lost several boats and nets when the tsunami hit yesterday. We're grateful no lives were lost here, but rebuilding equipment before the next season is going to be tough. Any support, cash or materials, helps our families get back on the water",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of damages boats docked at Krillji Port",
+    "likes": "1876",
+    "comments_count": "37",
+    "shares": "70",
+    "timestamp": "07/15/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 2,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "1",
+    "username": "fishcat16321",
+    "handle": "@fishcat16321",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#607D8B",
+    "content": "$CHUM NOW UP BY 190% AND IS ONLY SURGING HIGHER !! This could be your chance to strike it rich, invest now ! #chumcoin #fishcrypto",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "LINK:\n\nSuspicious looking link buncha letters buncha numbers",
+    "likes": "15",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 2,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
         "is_bot": true
       }
     ],
     "profile": {
-      "bio": "Daily wellness tips",
-      "post_count": 310,
-      "followers": "55K",
-      "following": "402",
-      "joined": "2 years ago",
-      "engagement_ratio": "Engagement jumps on miracle-claim posts",
-      "bot_followers_pct": "51",
-      "follower_quality_note": "Many wellness-spam accounts with reused captions.",
-      "red_flags": [
-        "Absolute health guarantee",
-        "No expert credentials",
-        "Elevated bot-follower estimate"
-      ],
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
       "recent_posts": [
         {
-          "text": "Detox miracle!",
-          "likes": "12.1K"
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Natural cures only",
-          "likes": "9.3K"
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_014",
+    "username": "WaveWarriorWally",
+    "handle": "@wavewarriorwally",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#795548",
+    "content": "Hero fisherman single-handedly holds back tsunami wave to save trapped kids!!",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: AI-generated image of a man superhumanly pushing back a giant wave with his bare hands",
+    "likes": "8",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST",
+    "feedback_wrong": "Should escalate — AI GENERATED POST",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 2,
+    "fake_news_type": "AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_015",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Did a tsunami really hit Krillji Port? Looks perfectly fine to me lol",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: Photo of Krillji Port looking calm and undamaged",
+    "likes": "3",
+    "comments_count": "2",
+    "shares": "1",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 2,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_016",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "\"The 'earthquake' was really an underwater test gone wrong. WE ARE ALL JUST FISH IN A TANK THEY CONTROL. WAKE UP YOUR GILLS.",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "6",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 2,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_017",
+    "username": "ChadClam",
+    "handle": "@chadclam",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#00BCD4",
+    "content": "This grandma swam THROUGH the tsunami wave to save her grandkids?? absolute legend",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: AI-generated image of an elderly woman heroically emerging from a wave carrying two children",
+    "likes": "15",
+    "comments_count": "2",
+    "shares": "5",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST",
+    "feedback_wrong": "Should escalate — AI GENERATED POST",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 2,
+    "fake_news_type": "AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_018",
+    "username": "HenryHalibut",
+    "handle": "@henryhalibut",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#00BCD4",
+    "content": "MY COUSIN WORKS AT THE WEATHER BUREAU AND TOLD ME THEY'RE HIDING THE REAL WAVE HEIGHT, IT WAS ACTUALLY 15 METERS NOT 80CM!!",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "200",
+    "comments_count": "4",
+    "shares": "50",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 2,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_019",
+    "username": "HopeForHerring",
+    "handle": "@hopeforherring",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#FF5722",
+    "content": "Emergency fundraiser for tsunami victims!! link below, every seashell helps 🙏🌊",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "2 PHOTOS: blurry, hard-to-scan QR code, plus a stock photo of flooding from an unrelated country",
+    "likes": "345",
+    "comments_count": "6",
+    "shares": "23",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 2,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_020",
+    "username": "TidepoolTeresa",
+    "handle": "@tidepoolteresa",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#E91E63",
+    "content": "To whoever can help, our fishing boat and home in Salmonori were swept away. We have three kids and nowhere to stay tonight. Anything helps",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "2 PHOTOS: legitimate QR code, poorly edited photo of a family superimposed onto real tsunami wreckage",
+    "likes": "2345",
+    "comments_count": "46",
+    "shares": "123",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 2,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_021",
+    "username": "LarryLantern",
+    "handle": "@larrylantern",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#607D8B",
+    "content": "please i just need help, lost my wallet and papers when the water came in, i can't even prove where i'm from anymore. anyone willing to send anything\" \"Msg me: 0917 445 2028",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "45",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 2,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_022",
+    "username": "CarolCod",
+    "handle": "@carolcod",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#8BC34A",
+    "content": "Tribute art for everyone affected by the tsunami 🙏 sending love to Sardinku coast",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: AI-generated image of glowing lanterns floating on calm water at dusk, overly stylized and unrelated to real relief efforts",
+    "likes": "234",
+    "comments_count": "4",
+    "shares": "42",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST",
+    "feedback_wrong": "Should escalate — AI GENERATED POST",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 2,
+    "fake_news_type": "AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_023",
+    "username": "MatchFundManta",
+    "handle": "@matchfundmanta",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#FF9800",
+    "content": "🚨 DONATION MATCHING ALERT 🚨 Our partner company will match every donation 2x for the next 24 hours to help tsunami victims! Just send your donation to this account first and we'll confirm the match after",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: logo mockup of a fake \"corporate partner\" that doesn't actually exist",
+    "likes": "4578",
+    "comments_count": "91",
+    "shares": "534",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 2,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_024",
+    "username": "WayneWaveWatch",
+    "handle": "@waynewavewatch",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#9C27B0",
+    "content": "🔴 LIVE: Coverage of the Sardinku coast tsunami aftermath, watch now",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: AI-generated fake livestream thumbnail with a fabricated \"LIVE\" badge, viewer count, and a frozen \"reporter on scene\" image that doesn't correspond to any real broadcast",
+    "likes": "345",
+    "comments_count": "6",
+    "shares": "43",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST",
+    "feedback_wrong": "Should escalate — AI GENERATED POST",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 2,
+    "fake_news_type": "AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_025",
+    "username": "CaptainFinnegan",
+    "handle": "@captainfinnegan",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Retired coast guard captain here. I've seen this pattern before, they always downplay the wave height to avoid mass panic. Here's the REAL data I've compiled from my own contacts",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: crudely-made infographic showing invented wave height comparisons, labeled \"unofficial field data\"",
+    "likes": "543",
+    "comments_count": "10",
+    "shares": "78",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST, MISINFORMATION",
+    "feedback_wrong": "Should escalate — AI GENERATED POST, MISINFORMATION",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 2,
+    "fake_news_type": "AI GENERATED POST, MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_026",
+    "username": "SearchingForKen",
+    "handle": "@searchingforken",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#00BCD4",
+    "content": "Missing my brother Ken since the tsunami hit Codport, he was fishing near the pier that morning. Please share, and if you can spare anything to help fund the search, link below.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: AI-generated image of a young man on a boat, presented as \"Ken,\" alongside a real photo of Codport for context",
+    "likes": "34",
+    "comments_count": "2",
+    "shares": "3",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "SCAMS, AI GENERATED POST",
+    "feedback_wrong": "Should escalate — SCAMS, AI GENERATED POST",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 2,
+    "fake_news_type": "SCAMS, AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d2_fake_027",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Wake up fish. Earthquakes don't just 'happen' near major shipping lanes. This tsunami was triggered on purpose to justify shutting down Krillji Port for 'reconstruction' aka they wanted the land the whole time.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: AI-generated image of blueprints for a fake luxury resort overlaid on a map of Krillji Port",
+    "likes": "543",
+    "comments_count": "10",
+    "shares": "23",
+    "timestamp": "Day 2",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION, AI GENERATED POST",
+    "feedback_wrong": "Should escalate — MISINFORMATION, AI GENERATED POST",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 2,
+    "fake_news_type": "MISINFORMATION, AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
         }
       ]
     }

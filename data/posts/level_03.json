@@ -1,163 +1,870 @@
 [
   {
-    "id": "l3_post_001",
-    "username": "MetroNewsAlert",
-    "handle": "@metro_news_alert",
-    "verified": false,
-    "account_age": "4 months",
-    "avatar_color": "#EF6C00",
-    "content": "VIDEO: Mayor just announced free rice for every household starting Friday.",
-    "image": "res://icon.svg",
-    "image_date_watermark": "Originally from a 2022 festival promo photo",
-    "image_note": "Old image reused for a brand-new claim.",
-    "likes": "21K",
-    "comments_count": "3.4K",
-    "shares": "9.1K",
-    "timestamp": "20 minutes ago",
-    "is_fake": true,
-    "feedback_correct": "High virality, no official confirmation, young account.",
-    "feedback_wrong": "Should escalate - no verifying source; comments conflict.",
-    "guppi_hint": "Check comments for conflicting reports.",
-    "insight_tag": "Unverified sources",
+    "id": "d3_legit_014",
+    "username": "Anchovy News",
+    "handle": "@anchovy_news",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#009688",
+    "content": "BREAKING: Finfin Volcano has raised its alert status after a lava dome collapse triggered pyroclastic density currents and heavy ashfall across Halibay province. Residents in Clamalig, Guppyobatan, and Trigao City are advised to stay indoors and wear masks if going outside",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of thick ash covering a provincial road",
+    "likes": "4102",
+    "comments_count": "82",
+    "shares": "2340",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "https://www.pna.gov.ph/articles/1274187",
     "comments": [
       {
-        "username": "city_factcheck",
-        "content": "No such announcement on the city page.",
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
         "is_bot": false
       },
       {
-        "username": "support_share",
-        "content": "Share before deleted!!!",
-        "is_bot": true
-      }
-    ],
-    "profile": {
-      "bio": "Breaking news near you",
-      "post_count": 66,
-      "followers": "120K",
-      "following": "980",
-      "joined": "4 months ago",
-      "engagement_ratio": "Viral spikes without institutional sourcing",
-      "bot_followers_pct": "57",
-      "follower_quality_note": "Aggressive amplification networks dominate replies.",
-      "red_flags": [
-        "Unverified 'news' account",
-        "Reused old media",
-        "High suspected bot followers"
-      ],
-      "recent_posts": [
-        {
-          "text": "EXPLOSIVE update",
-          "likes": "2.9K"
-        },
-        {
-          "text": "They won't tell you this",
-          "likes": "2.9K"
-        }
-      ]
-    }
-  },
-  {
-    "id": "l3_post_002",
-    "username": "CityHallPress",
-    "handle": "@cityhall_press",
-    "verified": true,
-    "account_age": "6 years",
-    "avatar_color": "#283593",
-    "content": "Clarification: There is no free rice distribution scheduled this week. Please ignore viral posts.",
-    "image": null,
-    "image_note": "Text clarification from official press.",
-    "likes": "8.9K",
-    "comments_count": "1.1K",
-    "shares": "5.4K",
-    "timestamp": "10 minutes ago",
-    "is_fake": false,
-    "feedback_correct": "Official clarification account.",
-    "feedback_wrong": "Should approve: verified city press clarification.",
-    "guppi_hint": "",
-    "insight_tag": "Subtle credibility cues",
-    "comments": [
-      {
-        "username": "resident_ko",
-        "content": "Thanks for clarifying quickly.",
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
         "is_bot": false
       }
     ],
     "profile": {
-      "bio": "Official city press office",
-      "post_count": 2100,
-      "followers": "890K",
-      "following": "32",
-      "joined": "2020",
-      "engagement_ratio": "Stable clarification traffic",
-      "bot_followers_pct": "5",
-      "follower_quality_note": "Local journalists and resident orgs dominate.",
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
       "red_flags": [],
       "recent_posts": [
         {
-          "text": "Public works update",
-          "likes": "503"
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Traffic advisory",
-          "likes": "1K"
+          "text": "Stay safe out there.",
+          "likes": "84"
         }
       ]
     }
   },
   {
-    "id": "l3_post_003",
-    "username": "ScholarFundsNow",
-    "handle": "@scholarfundsnow",
-    "verified": false,
-    "account_age": "9 days",
-    "avatar_color": "#C62828",
-    "content": "Final reminder: click the form and enter your bank OTP to unlock grant release.",
-    "image": null,
-    "image_note": "No official agency stationery.",
-    "likes": "5.5K",
-    "comments_count": "777",
-    "shares": "2.2K",
-    "timestamp": "1 hour ago",
-    "is_fake": true,
-    "feedback_correct": "OTP + urgency is phishing.",
-    "feedback_wrong": "Should escalate - OTP requests are never legitimate grant steps.",
-    "guppi_hint": "That deadline-plus-code combo stands out.",
-    "insight_tag": "Scam / urgency tactics",
+    "id": "d3_legit_015",
+    "username": "Bicol Barracuda Times",
+    "handle": "@bicol_barracuda_times",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#E91E63",
+    "content": "UPDATE: At least 52 villages in Halibay have been affected by thick ashfall from Finfin. Authorities report zero visibility on some roads, with motorists advised to use headlights. No deaths or injuries reported so far.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of vehicles driving through ash with headlights on",
+    "likes": "3876",
+    "comments_count": "77",
+    "shares": "1987",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
     "comments": [
       {
-        "username": "cyberwatch",
-        "content": "Do not share OTP.",
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
         "is_bot": false
       },
       {
-        "username": "user_221",
-        "content": "I claimed already!!",
-        "is_bot": true
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
       }
     ],
     "profile": {
-      "bio": "Student support",
-      "post_count": 14,
-      "followers": "33K",
-      "following": "1502",
-      "joined": "9 days ago",
-      "engagement_ratio": "Exploded in under two weeks",
-      "bot_followers_pct": "76",
-      "follower_quality_note": "Most followers never interact beyond copy-paste praise.",
-      "red_flags": [
-        "Brand-new account",
-        "Requests bank OTP",
-        "Very high bot followers"
-      ],
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
       "recent_posts": [
         {
-          "text": "LAST CALL",
-          "likes": "6.2K"
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Limited slots",
-          "likes": "10.7K"
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_016",
+    "username": "SkyFin Aviation Watch",
+    "handle": "@skyfin_aviation_watch",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#E91E63",
+    "content": "The Skyfin Aviation Authority has restricted flights within 6 kilometers of Finfin's summit due to ash risks to aircraft engines. Airspace advisories remain in effect as the volcano continues effusive activity",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "2540",
+    "comments_count": "50",
+    "shares": "1120",
+    "timestamp": "07/17/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_017",
+    "username": "Anchovy News",
+    "handle": "@anchovy_news",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#009688",
+    "content": "More than 195,000 Fishes have now been displaced or affected by Finfin's ongoing eruption. Evacuation centers across Halibay continue to receive families as the Finfish Volcanology Institute maintains Alert Level 3 status",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of families lining up at an evacuation center",
+    "likes": "3210",
+    "comments_count": "64",
+    "shares": "1654",
+    "timestamp": "07/17/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_018",
+    "username": "SwordfishRelief",
+    "handle": "@swordfishrelief",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#FF9800",
+    "content": "Evacuation centers in Clamalig and Guppyobatan urgently need more N95 masks and hygiene kits. Supplies from last week ran out fast with new families arriving daily. Drop off at the Safety Sole office or DM us for pickup coordination",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of colunteers sorting donated supplies",
+    "likes": "1876",
+    "comments_count": "37",
+    "shares": "743",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_019",
+    "username": "HarvestHalibut",
+    "handle": "@harvesthalibut",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#E91E63",
+    "content": "Farmers in Clamalig lost entire vegetable plots buried under ash, and livestock didn't survive the fallout. We're raising funds to help affected families replant and recover before the next planting season. Every Seashell helps rebuild a livelihood",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of ash-covered crops in a farm field",
+    "likes": "1432",
+    "comments_count": "28",
+    "shares": "200",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_020",
+    "username": "RicefieldRemora",
+    "handle": "@ricefieldremora",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#795548",
+    "content": "My parents' rice field in Guppyobatan is completely buried in ash. They've farmed that land for over 20 years and it's their only source of income. We're trying to raise enough to at least clear the field before it hardens further. Any help is appreciated.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of an ash-covered rice paddy",
+    "likes": "2000",
+    "comments_count": "40",
+    "shares": "892",
+    "timestamp": "07/17/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_021",
+    "username": "CamilleClownfish",
+    "handle": "@camilleclownfish",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#3F51B5",
+    "content": "Woke up to ash falling like snow outside our window. Had to close every gap in the house with wet towels just to keep the air somewhat breathable. This is the heaviest ashfall we've had since January",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of ash accumulating on a windowsill",
+    "likes": "300",
+    "comments_count": "6",
+    "shares": "20",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_022",
+    "username": "GupoGrouper",
+    "handle": "@gupogrouper",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#9C27B0",
+    "content": "Our whole barangay smells like sulfur today. Kids are wearing masks just to walk to the covered court where relief goods are being distributed. Stay safe out there, Halibay",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of children wearing massks swimming down an ash-covered street",
+    "likes": "20",
+    "comments_count": "2",
+    "shares": "1",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_023",
+    "username": "Anchovy News",
+    "handle": "@anchovy_news",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#009688",
+    "content": "Classes have been suspended in Guppyobatan for all levels, public and private, as ashfall continues to blanket the town. Local officials cite health and safety concerns for students commuting through affected areas",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "think of PUBMATS for school suspensions",
+    "likes": "605",
+    "comments_count": "12",
+    "shares": "100",
+    "timestamp": "07/17/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_024",
+    "username": "HenryHerring",
+    "handle": "@henryherring",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#00BCD4",
+    "content": "Saw volunteers handing out bottled water and face masks along the highway to stranded motorists caught in the ashfall. Didn't catch which group they were with, but thank you, whoever you are",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of volunteers distributing supplies to cars stuck in traffic",
+    "likes": "20",
+    "comments_count": "2",
+    "shares": "5",
+    "timestamp": "07/16/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_025",
+    "username": "LilyLungfish",
+    "handle": "@lilylungfish",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#3F51B5",
+    "content": "My granfish refuses to leave her house even with the evacuation advisory because she doesn't want to leave her farm animals behind. We're trying to raise funds to build a temporary shelter for the animals so she'll agree to move to safety",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of farm animals in a makeshift shelter",
+    "likes": "27",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "07/17/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_026",
+    "username": "EarlEel",
+    "handle": "@earleel",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#8BC34A",
+    "content": "It's been two days in the evacuation center and honestly the waiting is the hardest part. Not knowing when we can go home, if home will even still be livable. Grateful for the volunteers keeping our spirits up though",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of family's makeshift sleeping area in covered court",
+    "likes": "100",
+    "comments_count": "2",
+    "shares": "44",
+    "timestamp": "07/18/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_027",
+    "username": "FinnFlounder",
+    "handle": "@finnflounder",
+    "verified": false,
+    "account_age": "1 year",
+    "avatar_color": "#9C27B0",
+    "content": "Vet teams have been checking on livestock left behind in the evacuation zones around Finfin, treating ash-related eye and respiratory irritation. We need more saline solution and animal feed donations to keep up with the number of animals coming in",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "Photo of a volunteer vet treating a worm's eyes (think of the animals like spongebob being so fr)",
+    "likes": "389",
+    "comments_count": "7",
+    "shares": "45",
+    "timestamp": "07/17/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Sharing what I see around the reef.",
+      "post_count": 86,
+      "followers": "2.4K",
+      "following": "340",
+      "joined": "1 year ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d3_legit_028",
+    "username": "Anchovy News",
+    "handle": "@anchovy_news",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#009688",
+    "content": "The Finfish Volcanology Institute reports 32 volcanic earthquakes and 284 rockfall events recorded in a single day at Finfin, alongside sulfur dioxide emissions reaching over 1,500 tonnes daily. Alert Level 3 remains in place with no signs of de-escalation.",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "Graph showing seismic activity spikes over recent days",
+    "likes": "1340",
+    "comments_count": "26",
+    "shares": "437",
+    "timestamp": "07/18/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 3,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
         }
       ]
     }

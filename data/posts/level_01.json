@@ -1,194 +1,928 @@
 [
   {
-    "id": "l1_post_001",
-    "username": "WellnessWithMaria_PH",
-    "handle": "@wellness_maria",
-    "verified": false,
-    "account_age": "3 weeks",
-    "avatar_color": "#E91E63",
-    "content": "DOCTORS DON'T WANT YOU TO KNOW THIS ONE DAILY TRICK...",
-    "image": null,
-    "image_date_watermark": "",
-    "image_note": "No photo attached.",
-    "likes": "14.2K",
-    "comments_count": "832",
-    "shares": "8.7K",
-    "timestamp": "2 hours ago",
-    "is_fake": true,
-    "feedback_correct": "New unverified account + dangerous medical claim.",
-    "feedback_wrong": "Should escalate - new account, no medical source.",
-    "guppi_hint": "Pretty new account for that much reach…",
-    "insight_tag": "Posts with emotional language",
-    "comments": [
-      {
-        "username": "juan_reyes",
-        "content": "THIS IS DANGEROUS. Please consult a real doctor.",
-        "is_bot": false
-      },
-      {
-        "username": "health_facts_ph",
-        "content": "No clinical evidence supports this claim.",
-        "is_bot": false
-      },
-      {
-        "username": "user93821",
-        "content": "Amazing!! Sharing this now!!!",
-        "is_bot": true
-      }
-    ],
-    "profile": {
-      "bio": "Natural healing advocate 🌿",
-      "post_count": 12,
-      "followers": "45.2K",
-      "following": "182",
-      "joined": "3 weeks ago",
-      "engagement_ratio": "1 like per 3 followers (suspiciously high for a new account)",
-      "bot_followers_pct": "68",
-      "follower_quality_note": "Many accounts follow dozens of wellness scam pages and never post original content.",
-      "red_flags": [
-        "Account created only 3 weeks ago",
-        "No verified badge",
-        "Follower count surged far faster than post history",
-        "High suspected bot-follower percentage"
-      ],
-      "recent_posts": [
-        {
-          "text": "Big Pharma doesn't want you healthy!",
-          "likes": "12.9K"
-        },
-        {
-          "text": "10 cures they're hiding from you",
-          "likes": "4.2K"
-        },
-        {
-          "text": "Natural is always better 💚",
-          "likes": "2.8K"
-        }
-      ]
-    }
-  },
-  {
-    "id": "l1_post_002",
-    "username": "MetroGovPH",
-    "handle": "@metrogovph",
+    "id": "d1_legit_001",
+    "username": "Guppy News",
+    "handle": "@guppy_news",
     "verified": true,
-    "account_age": "7 years",
-    "avatar_color": "#3F51B5",
-    "content": "City health office opens free vaccination slots this weekend. Register via the official portal.",
-    "image": null,
+    "account_age": "4 years",
+    "avatar_color": "#FF5722",
+    "content": "Death toll in the Angelfish Building collapse has risen to 30, with 8 others injured. The nine-story structure, which had been under construction since 2020, collapsed while dozens of workers were sleeping inside. Search and rescue operations have concluded, and authorities are now investigating the cause",
+    "image": "pending",
     "image_date_watermark": "",
-    "image_note": "No photo attached.",
-    "likes": "3.2K",
-    "comments_count": "219",
-    "shares": "1.4K",
-    "timestamp": "4 hours ago",
+    "image_note": "PHOTO (look at reference)",
+    "likes": "300",
+    "comments_count": "6",
+    "shares": "20",
+    "timestamp": "07/10/2026",
     "is_fake": false,
-    "feedback_correct": "Verified official account and policy-aligned information.",
-    "feedback_wrong": "Should approve - official account and valid public service notice.",
-    "guppi_hint": "",
-    "insight_tag": "Subtle credibility cues",
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 1,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "https://www.facebook.com/gmanews/posts/the-death-toll-in-the-angeles-city-pampanga-building-that-collapsed-last-may-24-/1549107717260880/",
     "comments": [
       {
-        "username": "anna_p",
-        "content": "Thanks! Registered my parents.",
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
         "is_bot": false
       },
       {
-        "username": "clinic_nurse",
-        "content": "Schedule list matches city website update.",
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
         "is_bot": false
       }
     ],
     "profile": {
-      "bio": "Official Metro Government updates",
-      "post_count": 1840,
-      "followers": "1.2M",
-      "following": "25",
-      "joined": "2019",
-      "engagement_ratio": "Healthy ratio for government announcements",
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
       "bot_followers_pct": "4",
-      "follower_quality_note": "Most followers are local citizens and civic organizations.",
+      "follower_quality_note": "",
       "red_flags": [],
       "recent_posts": [
         {
-          "text": "Flood safety advisory for districts 3 and 5",
-          "likes": "1.2K"
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Holiday traffic rerouting map",
-          "likes": "1.1K"
-        },
-        {
-          "text": "Public school enrollment reminder",
-          "likes": "1K"
+          "text": "Stay safe out there.",
+          "likes": "84"
         }
       ]
     }
   },
   {
-    "id": "l1_post_003",
-    "username": "QuickCashRewards",
-    "handle": "@quickcashrewards",
-    "verified": false,
-    "account_age": "5 days",
-    "avatar_color": "#FF9800",
-    "content": "Claim instant scholarship grant NOW. Send your OTP code to verify eligibility!",
-    "image": null,
+    "id": "d1_legit_002",
+    "username": "Bay Bulletin",
+    "handle": "@bay_bulletin",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#00BCD4",
+    "content": "A multi-storey building collapsed Angelfish City, July 7.",
+    "image": "pending",
     "image_date_watermark": "",
-    "image_note": "No photo attached.",
-    "likes": "9.8K",
-    "comments_count": "2.1K",
-    "shares": "3.9K",
-    "timestamp": "30 minutes ago",
-    "is_fake": true,
-    "feedback_correct": "Urgent tone + OTP request is a scam pattern.",
-    "feedback_wrong": "Should escalate. Legit programs never ask for OTP in DMs.",
-    "guppi_hint": "Why would they need an OTP to claim something?",
-    "insight_tag": "Scam / urgency tactics",
+    "image_note": "PHOTO (look at reference)",
+    "likes": "1.9K",
+    "comments_count": "2",
+    "shares": "300",
+    "timestamp": "07/07/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 1,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "https://www.facebook.com/ManilaBulletin/posts/a-multi-storey-building-collapsed-in-barangay-balibago-angeles-city-pampanga-on-/1464431805725021/",
     "comments": [
       {
-        "username": "study_help",
-        "content": "Don't send OTP to anyone. This is phishing.",
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
         "is_bot": false
       },
       {
-        "username": "user82911",
-        "content": "Legit! I got paid already!!!",
-        "is_bot": true
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_legit_003",
+    "username": "The Curious",
+    "handle": "@the_curious",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#009688",
+    "content": "Sole imposes P11M in fines over Angelfish building collapse\n\nSOLE is imposing a fine of more than P11 million on the owner and contractor of the building that collapsed on May 24 in Angeles City, Pampanga province, and left 30 Fishes dead.",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "20",
+    "comments_count": "2",
+    "shares": "5",
+    "timestamp": "07/12/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 1,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "https://newsinfo.inquirer.net/2248393/dole-imposes-p11m-in-fines-over-angeles-building-collapse",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
       },
       {
-        "username": "user82912",
-        "content": "Legit! I got paid already!!!",
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_legit_004",
+    "username": "Phil Starfish",
+    "handle": "@phil_starfish",
+    "verified": true,
+    "account_age": "4 years",
+    "avatar_color": "#8BC34A",
+    "content": "9 fish now found dead in Angelfish City building collapse",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "2K",
+    "comments_count": "2",
+    "shares": "1K",
+    "timestamp": "07/08/2026",
+    "is_fake": false,
+    "feedback_correct": "Looks consistent with verified reporting or community updates.",
+    "feedback_wrong": "That one looked legitimate — no clear escalation signal.",
+    "guppi_hint": "Photo and write-up seem to line up.",
+    "insight_tag": "Trusted reporting",
+    "day": 1,
+    "fake_news_type": "",
+    "art_asset_link": "",
+    "reference": "https://www.philstar.com/nation/2026/05/31/2531853/9-now-found-dead-angeles-city-building-collapse",
+    "comments": [
+      {
+        "username": "coral_neighbor",
+        "content": "Thanks for the update.",
+        "is_bot": false
+      },
+      {
+        "username": "fin_local",
+        "content": "Stay safe everyone.",
+        "is_bot": false
+      }
+    ],
+    "profile": {
+      "bio": "Local updates from the reef.",
+      "post_count": 640,
+      "followers": "128K",
+      "following": "210",
+      "joined": "4 years ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "4",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_001",
+    "username": "Ran2052",
+    "handle": "@ran2052",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Amazing firefish saves kid!",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO\n\n\"AI\" generated post of a man super buffed up holding the building up while a kid is passed out below it",
+    "likes": "5",
+    "comments_count": "2",
+    "shares": "1",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST",
+    "feedback_wrong": "Should escalate — AI GENERATED POST",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 1,
+    "fake_news_type": "AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
         "is_bot": true
       }
     ],
     "profile": {
-      "bio": "We help students get money fast 💸",
+      "bio": "Just posting what they won't tell you.",
       "post_count": 8,
-      "followers": "62.1K",
-      "following": "2,081",
-      "joined": "5 days ago",
-      "engagement_ratio": "Extremely inflated likes vs. account age",
-      "bot_followers_pct": "81",
-      "follower_quality_note": "Many follower names are random digit dumps and never reply uniquely.",
-      "red_flags": [
-        "Brand-new account (5 days)",
-        "Asks for OTP",
-        "Follows thousands of accounts while brand new",
-        "Very high bot-follower estimate"
-      ],
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
       "recent_posts": [
         {
-          "text": "Flash giveaway! DM now!",
-          "likes": "4.7K"
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Limited slots only!!!",
-          "likes": "14.5K"
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_002",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Did a building really 'collapse' in Angelfish City? Because I just walked past it and it looks perfectly fine to me. Y'all really believe everything you see online 🙄",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO: real photo of the building taken before the collapse, presented as current",
+    "likes": "1",
+    "comments_count": "2",
+    "shares": "0",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 1,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
         },
         {
-          "text": "Winner list posted soon",
-          "likes": "4.1K"
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_003",
+    "username": "Ran2052",
+    "handle": "@ran2052",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "THOUSANDS DIED IN ANGELFISH CITY BUILDING COLLAPSE?!\n\nComing from the PRESIDENT themselves! I saw secret files saying that the deathcount is up to the thousands!",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "1",
+    "comments_count": "2",
+    "shares": "0",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 1,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_004",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Building collapse made from the shadow government! WE'RE ALL SEA ROCKS WAITING TO DRIFT. OPEN YOUR GILLS!",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "No photo attached.",
+    "likes": "5",
+    "comments_count": "2",
+    "shares": "1",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION, AI GENERATED POST",
+    "feedback_wrong": "Should escalate — MISINFORMATION, AI GENERATED POST",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 1,
+    "fake_news_type": "MISINFORMATION, AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_005",
+    "username": "Ran2052",
+    "handle": "@ran2052",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Donate now for the victims of angelfish city collapse!",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "2 PHOTOS\n\nbadly drawn QR code and if we add a 2nd photo unrelated to the disaster (like from another disaster)",
+    "likes": "10",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "SCAMS, AI GENERATED POST",
+    "feedback_wrong": "Should escalate — SCAMS, AI GENERATED POST",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 1,
+    "fake_news_type": "SCAMS, AI GENERATED POST",
+    "art_asset_link": "QR Code",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_006",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "DO YOU FISH NOT SEE IT? These other users are lying to you about this \"tragedy\" for money! I even have a photo right now of the building area and it's alright!",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO\n\nit actually is a legit photo of the building but BEFORE the collapse",
+    "likes": "2",
+    "comments_count": "2",
+    "shares": "1",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 1,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_007",
+    "username": "FamilyFish1978",
+    "handle": "@familyfish1978",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#FF5722",
+    "content": "Hello. My family is in need of donations. our home was destroyed because of the recent collapse (See photo attached) and we need help to get back on our fins.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "2 PHOTOS:\n\n1. Legit QR code\n\n2. a badly edited family of fish on a real photo of the collapsed building",
+    "likes": "25",
+    "comments_count": "2",
+    "shares": "3",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 1,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_008",
+    "username": "Ran2052",
+    "handle": "@ran2052",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "Look at this art I had AI made about the building collapse!",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO:\n\nAI art of someone giving money to a victim with the collapsed building behind them",
+    "likes": "100",
+    "comments_count": "2",
+    "shares": "20",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "AI GENERATED POST",
+    "feedback_wrong": "Should escalate — AI GENERATED POST",
+    "guppi_hint": "Something about that image feels off…",
+    "insight_tag": "Ai Generated Post",
+    "day": 1,
+    "fake_news_type": "AI GENERATED POST",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "12.4K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_009",
+    "username": "StarvingFish2021",
+    "handle": "@starvingfish2021",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#FF9800",
+    "content": "Hi. Please help me and my education. the building collapse made me lose my laptop. I don't have any ID to show to prove I'm from Coralocan City. Any help will do. Thanks\n\nThis is my info:\n0871 122 2026",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "50",
+    "comments_count": "2",
+    "shares": "2",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 1,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_010",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "I don't get why these NET-izens have to argue with me about this \"accident\" NOTHING HAPPENED get it through your head. Oh My FISH you all are so [Censored]",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "200",
+    "comments_count": "4",
+    "shares": "20",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 1,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_011",
+    "username": "d0nations4Ichthys",
+    "handle": "@d0nations4ichthys",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#607D8B",
+    "content": "We're collecting information from those who need help! we're sending donations to the victims of the Angelfish building collapse. Please provide the following information:\n\nFullName\nAddress\nCredit card number\nPIN\nCVN\n\nHave a blessed swim ahead!",
+    "image": null,
+    "image_date_watermark": "",
+    "image_note": "NONE",
+    "likes": "10",
+    "comments_count": "2",
+    "shares": "5",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "SCAMS",
+    "feedback_wrong": "Should escalate — SCAMS",
+    "guppi_hint": "Donation asks with thin proof always make me pause.",
+    "insight_tag": "Scams",
+    "day": 1,
+    "fake_news_type": "SCAMS",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "2 weeks ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "54",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
+        }
+      ]
+    }
+  },
+  {
+    "id": "d1_fake_012",
+    "username": "user12143",
+    "handle": "@user12143",
+    "verified": false,
+    "account_age": "2 weeks",
+    "avatar_color": "#3F51B5",
+    "content": "SEE I HAVE MORE PROOF OF THE ACCIDENT BEING STAGED. YOU ALL JUST DON'T BELIEVE ME.",
+    "image": "pending",
+    "image_date_watermark": "",
+    "image_note": "PHOTO:\n\n\"AI\" Generated photo of the building fine with a crowd of happy people and surprisingly the user as well",
+    "likes": "70",
+    "comments_count": "2",
+    "shares": "10",
+    "timestamp": "Day 1",
+    "is_fake": true,
+    "feedback_correct": "MISINFORMATION",
+    "feedback_wrong": "Should escalate — MISINFORMATION",
+    "guppi_hint": "I'd double-check whether this matches other reports.",
+    "insight_tag": "Misinformation",
+    "day": 1,
+    "fake_news_type": "MISINFORMATION",
+    "art_asset_link": "",
+    "reference": "",
+    "comments": [
+      {
+        "username": "tide_watcher",
+        "content": "Source? This doesn't match other reports.",
+        "is_bot": false
+      },
+      {
+        "username": "reefuser8821",
+        "content": "Sharing everywhere!!!",
+        "is_bot": true
+      }
+    ],
+    "profile": {
+      "bio": "Just posting what they won't tell you.",
+      "post_count": 8,
+      "followers": "3.1K",
+      "following": "420",
+      "joined": "1 month ago",
+      "engagement_ratio": "Unknown",
+      "bot_followers_pct": "31",
+      "follower_quality_note": "",
+      "red_flags": [],
+      "recent_posts": [
+        {
+          "text": "Another update from around the city.",
+          "likes": "120"
+        },
+        {
+          "text": "Stay safe out there.",
+          "likes": "84"
         }
       ]
     }

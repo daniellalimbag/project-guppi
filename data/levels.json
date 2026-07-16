@@ -8,23 +8,23 @@
         {
           "shift": 1,
           "posts_pool": "level_01",
-          "posts_shown": 6,
+          "posts_shown": 8,
           "hint_frequency": 1.0,
-          "note": "Morning intake"
+          "note": "Day 1 — morning intake"
         },
         {
           "shift": 2,
           "posts_pool": "level_02",
-          "posts_shown": 7,
+          "posts_shown": 8,
           "hint_frequency": 0.9,
-          "note": "Midday desk"
+          "note": "Day 2 — midday desk"
         },
         {
           "shift": 3,
           "posts_pool": "level_03",
           "posts_shown": 8,
           "hint_frequency": 0.8,
-          "note": "Closing queue"
+          "note": "Day 3 — closing queue"
         }
       ]
     },
@@ -35,24 +35,24 @@
       "shifts": [
         {
           "shift": 1,
-          "posts_pool": "level_02",
+          "posts_pool": "level_01",
           "posts_shown": 8,
           "hint_frequency": 0.7,
-          "note": "Open desk"
+          "note": "Day 1 — open desk"
         },
         {
           "shift": 2,
-          "posts_pool": "level_03",
+          "posts_pool": "level_02",
           "posts_shown": 10,
           "hint_frequency": 0.55,
-          "note": "Contested hour"
+          "note": "Day 2 — contested hour"
         },
         {
           "shift": 3,
-          "posts_pool": "level_04",
+          "posts_pool": "level_03",
           "posts_shown": 12,
           "hint_frequency": 0.4,
-          "note": "Rush window"
+          "note": "Day 3 — rush window"
         }
       ]
     },
@@ -63,24 +63,24 @@
       "shifts": [
         {
           "shift": 1,
-          "posts_pool": "level_03",
-          "posts_shown": 10,
+          "posts_pool": "level_01",
+          "posts_shown": 8,
           "hint_frequency": 0.35,
-          "note": "Deep current"
+          "note": "Day 1 — deep current"
         },
         {
           "shift": 2,
-          "posts_pool": "level_04",
+          "posts_pool": "level_02",
           "posts_shown": 12,
           "hint_frequency": 0.2,
-          "note": "Near-miss flood"
+          "note": "Day 2 — near-miss flood"
         },
         {
           "shift": 3,
-          "posts_pool": "level_05",
+          "posts_pool": "level_03",
           "posts_shown": 14,
           "hint_frequency": 0.1,
-          "note": "Peak traffic"
+          "note": "Day 3 — peak traffic"
         }
       ]
     }
