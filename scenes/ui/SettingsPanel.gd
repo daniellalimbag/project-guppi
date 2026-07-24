@@ -5,6 +5,8 @@ signal closed
 
 @onready var _bg_list: VBoxContainer = %BackgroundList
 @onready var _tips_toggle: CheckButton = %TipsToggle
+@onready var _volume_slider: HSlider = %VolumeSlider
+@onready var _volume_value: Label = %VolumeValue
 @onready var _done_button: Button = %DoneButton
 
 
@@ -13,6 +15,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_done_button.pressed.connect(close)
 	_tips_toggle.toggled.connect(_on_tips_toggled)
+	_volume_slider.value_changed.connect(_on_volume_changed)
 	_rebuild_backgrounds()
 	_sync_from_store()
 	if not SettingsStore.settings_changed.is_connected(_sync_from_store):
@@ -41,6 +44,8 @@ func is_open() -> bool:
 
 func _sync_from_store() -> void:
 	_tips_toggle.set_pressed_no_signal(SettingsStore.guppi_tips_enabled)
+	_volume_slider.set_value_no_signal(SettingsStore.music_volume)
+	_update_volume_label(SettingsStore.music_volume)
 	_highlight_background_buttons()
 
 
@@ -81,3 +86,12 @@ func _on_background_pressed(id: String) -> void:
 
 func _on_tips_toggled(pressed: bool) -> void:
 	SettingsStore.set_guppi_tips_enabled(pressed)
+
+
+func _on_volume_changed(value: float) -> void:
+	_update_volume_label(value)
+	SettingsStore.set_music_volume(value)
+
+
+func _update_volume_label(value: float) -> void:
+	_volume_value.text = "%d%%" % int(round(value * 100.0))

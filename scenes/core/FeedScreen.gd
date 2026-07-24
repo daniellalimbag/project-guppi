@@ -47,7 +47,7 @@ func _ready() -> void:
 	_pause_menu.give_up_requested.connect(func() -> void: request_go_to_title.emit())
 	_pause_menu.resume_requested.connect(func() -> void: GameState.resume_shift_clock())
 	_guppi.hint_requested.connect(_on_guppi_hint_requested)
-	SettingsStore.settings_changed.connect(_apply_theme)
+	SettingsStore.settings_changed.connect(_on_settings_changed)
 	GameState.shift_time_up.connect(_on_shift_time_up)
 	_apply_theme()
 	modulate.a = 0.0
@@ -58,6 +58,11 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	_stop_music()
+
+
+func _on_settings_changed() -> void:
+	_apply_theme()
+	_apply_music_volume()
 
 
 func _apply_theme() -> void:
@@ -132,8 +137,14 @@ func _play_music(path: String) -> void:
 	elif stream is AudioStreamOggVorbis:
 		(stream as AudioStreamOggVorbis).loop = true
 	_music_player.stream = stream
-	_music_player.volume_db = -6.0
+	_apply_music_volume()
 	_music_player.play()
+
+
+func _apply_music_volume() -> void:
+	if _music_player == null:
+		return
+	_music_player.volume_db = SettingsStore.music_volume_db(-6.0)
 
 
 func _stop_music() -> void:

@@ -27,7 +27,8 @@ const COLLAPSE_DELAY := 1.15
 @onready var _feedback_label: Label = %FeedbackLabel
 @onready var _comments_section: PanelContainer = %CommentsSection
 @onready var _comments_list: VBoxContainer = %CommentsList
-@onready var _media_button: Button = %MediaButton
+@onready var _media_button: Control = %MediaButton
+@onready var _media_hit_button: Button = %MediaHitButton
 @onready var _media_texture: TextureRect = %MediaTexture
 @onready var _media_placeholder: Label = %MediaPlaceholderLabel
 @onready var _media_detail: PanelContainer = %MediaDetail
@@ -47,7 +48,7 @@ func _ready() -> void:
 	_view_profile_button.custom_minimum_size = Vector2(0, 40)
 	_real_button.custom_minimum_size = Vector2(40, 40)
 	_flag_button.custom_minimum_size = Vector2(40, 40)
-	_media_button.custom_minimum_size.y = 120
+	_media_button.custom_minimum_size.y = 132
 	_style_icon_button(_real_button)
 	_style_icon_button(_flag_button)
 	_real_button.text = ""
@@ -59,7 +60,7 @@ func _ready() -> void:
 	_comments_toggle_button.pressed.connect(_toggle_comments)
 	_real_button.pressed.connect(func() -> void: _submit_label(true))
 	_flag_button.pressed.connect(func() -> void: _submit_label(false))
-	_media_button.pressed.connect(_on_media_tapped)
+	_media_hit_button.pressed.connect(_on_media_tapped)
 	%CloseMediaButton.pressed.connect(func() -> void: _media_detail.visible = false)
 
 	_feedback_overlay.visible = false
@@ -125,7 +126,6 @@ func _apply_post_data() -> void:
 	_post_texture = _load_post_texture()
 	var has_image := _post_texture != null
 	_media_button.visible = has_image or _expects_photo()
-	_media_button.text = ""
 	_media_texture.texture = _post_texture
 	_media_texture.visible = has_image
 	_media_placeholder.visible = not has_image
@@ -160,10 +160,28 @@ func _load_post_texture() -> Texture2D:
 	var path := _image_path()
 	if path.is_empty():
 		return null
-	if not ResourceLoader.exists(path):
+	if ResourceLoader.exists(path):
+		var loaded := load(path)
+		if loaded is Texture2D:
+			return loaded as Texture2D
+	# Fallback for newly added PNGs that Godot hasn't imported yet.
+	if not FileAccess.file_exists(path):
 		push_warning("Post image missing: %s" % path)
 		return null
-	return load(path) as Texture2D
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.is_empty():
+		push_warning("Post image empty: %s" % path)
+		return null
+	var img := Image.new()
+	var err := img.load_png_from_buffer(bytes)
+	if err != OK:
+		err = img.load_jpg_from_buffer(bytes)
+	if err != OK:
+		err = img.load_webp_from_buffer(bytes)
+	if err != OK:
+		push_warning("Post image decode failed: %s" % path)
+		return null
+	return ImageTexture.create_from_image(img)
 
 
 func _format_media_detail(has_image: bool) -> String:

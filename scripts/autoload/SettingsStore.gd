@@ -76,6 +76,8 @@ var last_shift: int = 1
 var unlocked_shifts: Dictionary = {"easy": 1, "medium": 1, "hard": 1}
 var progress_exists: bool = false
 var guppi_tips_enabled: bool = true
+## Music volume from 0.0 (mute) to 1.0 (full).
+var music_volume: float = 0.7
 
 ## Transient menu navigation (not persisted).
 var menu_continue_mode: bool = false
@@ -97,6 +99,7 @@ func load_settings() -> void:
 	last_shift = clampi(int(cfg.get_value("play", "last_shift", last_shift)), 1, 99)
 	progress_exists = bool(cfg.get_value("play", "progress_exists", progress_exists))
 	guppi_tips_enabled = bool(cfg.get_value("play", "guppi_tips_enabled", guppi_tips_enabled))
+	music_volume = clampf(float(cfg.get_value("audio", "music_volume", music_volume)), 0.0, 1.0)
 	var unlocked_raw: Variant = cfg.get_value("play", "unlocked_shifts", {})
 	if typeof(unlocked_raw) == TYPE_DICTIONARY:
 		for key in unlocked_raw.keys():
@@ -115,6 +118,7 @@ func save_settings() -> void:
 	cfg.set_value("play", "unlocked_shifts", unlocked_shifts)
 	cfg.set_value("play", "progress_exists", progress_exists)
 	cfg.set_value("play", "guppi_tips_enabled", guppi_tips_enabled)
+	cfg.set_value("audio", "music_volume", music_volume)
 	cfg.save(SAVE_PATH)
 
 
@@ -191,6 +195,21 @@ func set_guppi_tips_enabled(enabled: bool) -> void:
 	guppi_tips_enabled = enabled
 	save_settings()
 	settings_changed.emit()
+
+
+func set_music_volume(value: float) -> void:
+	var clamped := clampf(value, 0.0, 1.0)
+	if is_equal_approx(music_volume, clamped):
+		return
+	music_volume = clamped
+	save_settings()
+	settings_changed.emit()
+
+
+func music_volume_db(base_db: float = -6.0) -> float:
+	if music_volume <= 0.001:
+		return -80.0
+	return base_db + linear_to_db(music_volume)
 
 
 func make_flat_style(color: Color, radius: int = 0, margin: float = 0.0) -> StyleBoxFlat:
