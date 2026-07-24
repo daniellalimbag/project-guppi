@@ -6,8 +6,13 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
 bg_color = Color(1, 1, 1, 1)
-border_width_bottom = 1
-border_color = Color(0.85, 0.88, 0.92, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 4
+shadow_offset = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_media"]
 bg_color = Color(0.12, 0.13, 0.16, 1)
@@ -15,6 +20,9 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_media_detail"]
+bg_color = Color(0.98, 0.98, 0.99, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_approve"]
 bg_color = Color(0.18, 0.55, 0.42, 1)
@@ -141,6 +149,7 @@ autowrap_mode = 3
 
 [node name="MediaButton" type="Button" parent="OuterMargin/VBox"]
 unique_name_in_owner = true
+clip_contents = true
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 focus_mode = 0
@@ -148,6 +157,18 @@ flat = true
 theme_override_styles/normal = SubResource("StyleBoxFlat_media")
 theme_override_styles/hover = SubResource("StyleBoxFlat_media")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_media")
+
+[node name="MediaTexture" type="TextureRect" parent="OuterMargin/VBox/MediaButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
 
 [node name="MediaPlaceholderLabel" type="Label" parent="OuterMargin/VBox/MediaButton"]
 unique_name_in_owner = true
@@ -312,6 +333,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 z_index = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_media_detail")
 
 [node name="MediaDetailVBox" type="VBoxContainer" parent="MediaDetail"]
 layout_mode = 2
@@ -340,7 +362,19 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 14
 theme_override_constants/margin_bottom = 14
 
-[node name="MediaDetailLabel" type="Label" parent="MediaDetail/MediaDetailVBox/MediaDetailMargin"]
+[node name="MediaDetailCol" type="VBoxContainer" parent="MediaDetail/MediaDetailVBox/MediaDetailMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MediaDetailTexture" type="TextureRect" parent="MediaDetail/MediaDetailVBox/MediaDetailMargin/MediaDetailCol"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MediaDetailLabel" type="Label" parent="MediaDetail/MediaDetailVBox/MediaDetailMargin/MediaDetailCol"]
 unique_name_in_owner = true
 layout_mode = 2
 autowrap_mode = 3

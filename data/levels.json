@@ -10,21 +10,27 @@
           "posts_pool": "level_01",
           "posts_shown": 8,
           "hint_frequency": 1.0,
-          "note": "Day 1 — morning intake"
+          "note": "Day 1 — morning intake",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         },
         {
           "shift": 2,
           "posts_pool": "level_02",
           "posts_shown": 8,
           "hint_frequency": 0.9,
-          "note": "Day 2 — midday desk"
+          "note": "Day 2 — midday desk",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         },
         {
           "shift": 3,
           "posts_pool": "level_03",
           "posts_shown": 8,
           "hint_frequency": 0.8,
-          "note": "Day 3 — closing queue"
+          "note": "Day 3 — closing queue",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         }
       ]
     },
@@ -38,21 +44,27 @@
           "posts_pool": "level_01",
           "posts_shown": 8,
           "hint_frequency": 0.7,
-          "note": "Day 1 — open desk"
+          "note": "Day 1 — open desk",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         },
         {
           "shift": 2,
           "posts_pool": "level_02",
           "posts_shown": 10,
           "hint_frequency": 0.55,
-          "note": "Day 2 — contested hour"
+          "note": "Day 2 — contested hour",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         },
         {
           "shift": 3,
           "posts_pool": "level_03",
           "posts_shown": 12,
           "hint_frequency": 0.4,
-          "note": "Day 3 — rush window"
+          "note": "Day 3 — rush window",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         }
       ]
     },
@@ -66,21 +78,27 @@
           "posts_pool": "level_01",
           "posts_shown": 8,
           "hint_frequency": 0.35,
-          "note": "Day 1 — deep current"
+          "note": "Day 1 — deep current",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         },
         {
           "shift": 2,
           "posts_pool": "level_02",
           "posts_shown": 12,
           "hint_frequency": 0.2,
-          "note": "Day 2 — near-miss flood"
+          "note": "Day 2 — near-miss flood",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         },
         {
           "shift": 3,
           "posts_pool": "level_03",
           "posts_shown": 14,
           "hint_frequency": 0.1,
-          "note": "Day 3 — peak traffic"
+          "note": "Day 3 — peak traffic",
+          "background": "res://assets/backgrounds/level1-bg.png",
+          "music": "res://assets/music/AvapXia - Icarus.mp3"
         }
       ]
     }

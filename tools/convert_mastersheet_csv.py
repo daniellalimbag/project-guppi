@@ -250,6 +250,11 @@ def main() -> None:
 
 	# Easy/medium/hard now map onto the three mastersheet days.
 	# Shift 1 always uses the Day 1 pool with quota 8 (12 fake + 4 legit in pool).
+	# Shifts 2–3 reuse shift-1 ambiance as placeholders until unique art/music lands.
+	var ambiance := {
+		"background": "res://assets/backgrounds/level1-bg.png",
+		"music": "res://assets/music/AvapXia - Icarus.mp3",
+	}
 	levels = {
 		"difficulties": [
 			{
@@ -257,9 +262,9 @@ def main() -> None:
 				"label": "Easy",
 				"blurb": "Shorter queues and clearer tells. GUPPI talks a lot.",
 				"shifts": [
-					{"shift": 1, "posts_pool": "level_01", "posts_shown": 8, "hint_frequency": 1.0, "note": "Day 1 — morning intake"},
-					{"shift": 2, "posts_pool": "level_02", "posts_shown": 8, "hint_frequency": 0.9, "note": "Day 2 — midday desk"},
-					{"shift": 3, "posts_pool": "level_03", "posts_shown": 8, "hint_frequency": 0.8, "note": "Day 3 — closing queue"},
+					{"shift": 1, "posts_pool": "level_01", "posts_shown": 8, "hint_frequency": 1.0, "note": "Day 1 — morning intake", **ambiance},
+					{"shift": 2, "posts_pool": "level_02", "posts_shown": 8, "hint_frequency": 0.9, "note": "Day 2 — midday desk", **ambiance},
+					{"shift": 3, "posts_pool": "level_03", "posts_shown": 8, "hint_frequency": 0.8, "note": "Day 3 — closing queue", **ambiance},
 				],
 			},
 			{
@@ -267,9 +272,9 @@ def main() -> None:
 				"label": "Medium",
 				"blurb": "Standard load. Tips get quieter.",
 				"shifts": [
-					{"shift": 1, "posts_pool": "level_01", "posts_shown": 8, "hint_frequency": 0.7, "note": "Day 1 — open desk"},
-					{"shift": 2, "posts_pool": "level_02", "posts_shown": 10, "hint_frequency": 0.55, "note": "Day 2 — contested hour"},
-					{"shift": 3, "posts_pool": "level_03", "posts_shown": 12, "hint_frequency": 0.4, "note": "Day 3 — rush window"},
+					{"shift": 1, "posts_pool": "level_01", "posts_shown": 8, "hint_frequency": 0.7, "note": "Day 1 — open desk", **ambiance},
+					{"shift": 2, "posts_pool": "level_02", "posts_shown": 10, "hint_frequency": 0.55, "note": "Day 2 — contested hour", **ambiance},
+					{"shift": 3, "posts_pool": "level_03", "posts_shown": 12, "hint_frequency": 0.4, "note": "Day 3 — rush window", **ambiance},
 				],
 			},
 			{
@@ -277,9 +282,9 @@ def main() -> None:
 				"label": "Hard",
 				"blurb": "Longer queues. Near-misses. Quiet GUPPI.",
 				"shifts": [
-					{"shift": 1, "posts_pool": "level_01", "posts_shown": 8, "hint_frequency": 0.35, "note": "Day 1 — deep current"},
-					{"shift": 2, "posts_pool": "level_02", "posts_shown": 12, "hint_frequency": 0.2, "note": "Day 2 — near-miss flood"},
-					{"shift": 3, "posts_pool": "level_03", "posts_shown": 14, "hint_frequency": 0.1, "note": "Day 3 — peak traffic"},
+					{"shift": 1, "posts_pool": "level_01", "posts_shown": 8, "hint_frequency": 0.35, "note": "Day 1 — deep current", **ambiance},
+					{"shift": 2, "posts_pool": "level_02", "posts_shown": 12, "hint_frequency": 0.2, "note": "Day 2 — near-miss flood", **ambiance},
+					{"shift": 3, "posts_pool": "level_03", "posts_shown": 14, "hint_frequency": 0.1, "note": "Day 3 — peak traffic", **ambiance},
 				],
 			},
 		]

@@ -28,12 +28,16 @@ const COLLAPSE_DELAY := 1.15
 @onready var _comments_section: PanelContainer = %CommentsSection
 @onready var _comments_list: VBoxContainer = %CommentsList
 @onready var _media_button: Button = %MediaButton
+@onready var _media_texture: TextureRect = %MediaTexture
+@onready var _media_placeholder: Label = %MediaPlaceholderLabel
 @onready var _media_detail: PanelContainer = %MediaDetail
+@onready var _media_detail_texture: TextureRect = %MediaDetailTexture
 @onready var _media_detail_label: Label = %MediaDetailLabel
 
 var _post_data: Dictionary = {}
 var _comments_open := false
 var _is_locked := false
+var _post_texture: Texture2D = null
 
 
 func _ready() -> void:
@@ -118,12 +122,48 @@ func _apply_post_data() -> void:
 	%AvatarPanel.add_theme_stylebox_override("panel", avatar_style)
 	_avatar_label.text = str(_post_data.get("username", "U")).left(1)
 
-	var has_image := _post_data.get("image") != null and str(_post_data.get("image", "")).strip_edges() != ""
-	_media_button.visible = true
+	_post_texture = _load_post_texture()
+	var has_image := _post_texture != null
+	_media_button.visible = has_image or _expects_photo()
 	_media_button.text = ""
-	%MediaPlaceholderLabel.text = "Photo" if has_image else "Photo"
+	_media_texture.texture = _post_texture
+	_media_texture.visible = has_image
+	_media_placeholder.visible = not has_image
+	_media_placeholder.text = "Photo"
+	_media_detail_texture.texture = _post_texture
+	_media_detail_texture.visible = has_image
 	_media_detail_label.text = _format_media_detail(has_image)
 	_rebuild_comments(_post_data.get("comments", []))
+
+
+func _image_path() -> String:
+	var raw = _post_data.get("image")
+	if raw == null:
+		return ""
+	var path := str(raw).strip_edges()
+	if path.is_empty() or path.to_lower() == "pending":
+		return ""
+	if path.begins_with("assets/"):
+		return "res://" + path
+	return path
+
+
+func _expects_photo() -> bool:
+	var raw = _post_data.get("image")
+	if raw == null:
+		return false
+	var path := str(raw).strip_edges()
+	return not path.is_empty()
+
+
+func _load_post_texture() -> Texture2D:
+	var path := _image_path()
+	if path.is_empty():
+		return null
+	if not ResourceLoader.exists(path):
+		push_warning("Post image missing: %s" % path)
+		return null
+	return load(path) as Texture2D
 
 
 func _format_media_detail(has_image: bool) -> String:

@@ -198,6 +198,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
 [node name="FooterRow" type="HBoxContainer" parent="Root/VBox/FooterBar"]
 layout_mode = 2
 
+[node name="FooterSpacer" type="Control" parent="Root/VBox/FooterBar/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="MenuButton" type="Button" parent="Root/VBox/FooterBar/FooterRow"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 40)
@@ -207,7 +211,3 @@ flat = true
 theme_override_colors/font_color = Color(0.08, 0.1, 0.12, 1)
 theme_override_font_sizes/font_size = 16
 text = "Menu"
-
-[node name="FooterSpacer" type="Control" parent="Root/VBox/FooterBar/FooterRow"]
-layout_mode = 2
-size_flags_horizontal = 3

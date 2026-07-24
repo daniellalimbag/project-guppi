@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scenes/core/FeedScreen.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/feed/GuppiCompanion.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/PhoneStatusBar.tscn" id="3"]
 [ext_resource type="Texture2D" path="res://assets/icons/icon_quota_star.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/level1-bg.png" id="5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
-bg_color = Color(0.97, 0.98, 0.99, 1)
+bg_color = Color(0.97, 0.98, 0.99, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
 bg_color = Color(0.22, 0.55, 0.58, 1)
@@ -46,6 +47,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -131,11 +145,19 @@ size_flags_horizontal = 3
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 1
 
-[node name="FeedList" type="VBoxContainer" parent="MainCol/FeedScroll"]
+[node name="FeedMargin" type="MarginContainer" parent="MainCol/FeedScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 12
+
+[node name="FeedList" type="VBoxContainer" parent="MainCol/FeedScroll/FeedMargin"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="QueueDoneLabel" type="Label" parent="MainCol"]
 unique_name_in_owner = true
@@ -154,6 +176,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
 [node name="FooterRow" type="HBoxContainer" parent="MainCol/FooterBar"]
 layout_mode = 2
 
+[node name="FooterSpacer" type="Control" parent="MainCol/FooterBar/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="MenuButton" type="Button" parent="MainCol/FooterBar/FooterRow"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 40)
@@ -163,10 +189,6 @@ flat = true
 theme_override_colors/font_color = Color(0.08, 0.1, 0.12, 1)
 theme_override_font_sizes/font_size = 16
 text = "Menu"
-
-[node name="FooterSpacer" type="Control" parent="MainCol/FooterBar/FooterRow"]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="QuotaBadge" type="Control" parent="."]
 unique_name_in_owner = true
@@ -230,3 +252,7 @@ z_index = 30
 
 [node name="GuppiCompanion" parent="." instance=ExtResource("2")]
 unique_name_in_owner = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Master"

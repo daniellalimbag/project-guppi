@@ -14,6 +14,8 @@ const PAUSE_MENU_SCENE := preload("res://scenes/ui/PauseMenu.tscn")
 @onready var _header_label: Label = %HeaderLabel
 @onready var _progress_label: Label = %ProgressLabel
 @onready var _star_texture: TextureRect = %StarTexture
+@onready var _background_image: TextureRect = %BackgroundImage
+@onready var _music_player: AudioStreamPlayer = %MusicPlayer
 @onready var _feed_list: VBoxContainer = %FeedList
 @onready var _queue_done_label: Label = %QueueDoneLabel
 @onready var _guppi: GuppiCompanion = %GuppiCompanion
@@ -54,12 +56,18 @@ func _ready() -> void:
 	tween.tween_property(self, "modulate:a", 1.0, 0.25)
 
 
+func _exit_tree() -> void:
+	_stop_music()
+
+
 func _apply_theme() -> void:
 	var palette := SettingsStore.get_palette()
-	var screen: Color = palette.get("screen", Color(0.97, 0.98, 0.99))
 	var accent: Color = palette.get("accent", Color(0.22, 0.55, 0.58))
 	var accent_dark: Color = palette.get("accent_dark", Color(0.12, 0.42, 0.45))
-	$Background.add_theme_stylebox_override("panel", SettingsStore.make_flat_style(screen))
+	# Keep feed backdrop transparent so the shift art shows through.
+	$Background.add_theme_stylebox_override(
+		"panel", SettingsStore.make_flat_style(Color(0, 0, 0, 0))
+	)
 	$MainCol/HeaderBar.add_theme_stylebox_override(
 		"panel", SettingsStore.make_flat_style(accent, 0, 6.0)
 	)
@@ -82,6 +90,7 @@ func _load_feed() -> void:
 	var cfg: Dictionary = LevelManager.get_shift_config(difficulty, shift)
 	var hint_frequency := float(cfg.get("hint_frequency", 1.0))
 	GameState.begin_level(difficulty, shift, posts.size(), hint_frequency)
+	_apply_shift_ambiance(cfg)
 
 	_header_label.text = "SEA CORP."
 	_status_bar.set_shift_status(GameState.shift_status_text())
@@ -102,6 +111,37 @@ func _load_feed() -> void:
 		card.profile_requested.connect(_on_profile_requested)
 
 	_refresh_active_context()
+
+
+func _apply_shift_ambiance(cfg: Dictionary) -> void:
+	var bg_path := str(cfg.get("background", "")).strip_edges()
+	if not bg_path.is_empty() and ResourceLoader.exists(bg_path):
+		_background_image.texture = load(bg_path) as Texture2D
+	_play_music(str(cfg.get("music", "")).strip_edges())
+
+
+func _play_music(path: String) -> void:
+	_stop_music()
+	if path.is_empty() or not ResourceLoader.exists(path):
+		return
+	var stream: AudioStream = load(path) as AudioStream
+	if stream == null:
+		return
+	if stream is AudioStreamMP3:
+		(stream as AudioStreamMP3).loop = true
+	elif stream is AudioStreamOggVorbis:
+		(stream as AudioStreamOggVorbis).loop = true
+	_music_player.stream = stream
+	_music_player.volume_db = -6.0
+	_music_player.play()
+
+
+func _stop_music() -> void:
+	if _music_player == null:
+		return
+	if _music_player.playing:
+		_music_player.stop()
+	_music_player.stream = null
 
 
 func _clear_feed() -> void:
@@ -186,6 +226,7 @@ func _finish_level() -> void:
 	if _level_finished:
 		return
 	_level_finished = true
+	_stop_music()
 	GameState.finalize_level_stats()
 	_queue_done_label.visible = true
 	_queue_done_label.text = "Quota filled."

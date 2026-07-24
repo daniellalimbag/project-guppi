@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c810yaugsa2j5"
+
+[deps]
+
+files=["res://data/HACKATHON MASTERSHEET - FAKE POSTS.Caption.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.Attachment (optional).translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.Num of likes.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.User.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.Num of shares.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.DAY.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.FAKE NEWS TYPE.translation"]
+
+source_file="res://data/HACKATHON MASTERSHEET - FAKE POSTS.csv"
+dest_files=["res://data/HACKATHON MASTERSHEET - FAKE POSTS.Caption.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.Attachment (optional).translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.Num of likes.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.User.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.Num of shares.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.DAY.translation", "res://data/HACKATHON MASTERSHEET - FAKE POSTS.FAKE NEWS TYPE.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

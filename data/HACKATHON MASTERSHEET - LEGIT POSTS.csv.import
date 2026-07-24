@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bl48tpc71iscs"
+
+[deps]
+
+source_file="res://data/HACKATHON MASTERSHEET - LEGIT POSTS.csv"
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
