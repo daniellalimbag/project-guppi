@@ -7,8 +7,9 @@ const POST_CARD_SCENE := preload("res://scenes/feed/PostCard.tscn")
 const PROFILE_SCENE := preload("res://scenes/feed/ProfileScreen.tscn")
 const PAUSE_MENU_SCENE := preload("res://scenes/ui/PauseMenu.tscn")
 
-## Drop a custom star PNG here (or replace assets/icons/icon_quota_star.png).
-@export var quota_star_texture: Texture2D
+const QUOTA_SPRITE_DIR := "res://assets/quote-sprites"
+const QUOTA_SPRITE_MAX := 8
+const QUOTA_FRAME_DURATION := 0.35
 
 @onready var _status_bar: PhoneStatusBar = %PhoneStatusBar
 @onready var _header_label: Label = %HeaderLabel
@@ -27,13 +28,17 @@ var _cards_by_id: Dictionary = {}
 var _profile_screen: ProfileScreen
 var _pause_menu: PauseMenu
 var _active_context_post: Dictionary = {}
+## score -> [frame1, frame2]
+var _quota_frames_by_score: Dictionary = {}
+var _quota_frame_index: int = 0
+var _quota_frame_timer: float = 0.0
 
 
 func _ready() -> void:
 	_queue_done_label.visible = false
+	_progress_label.visible = false
+	_cache_quota_sprites()
 	%MenuButton.pressed.connect(_on_menu_pressed)
-	if quota_star_texture != null:
-		_star_texture.texture = quota_star_texture
 	_profile_screen = PROFILE_SCENE.instantiate()
 	_profile_screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_overlay_host.add_child(_profile_screen)
@@ -54,6 +59,15 @@ func _ready() -> void:
 	_load_feed()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 0.25)
+
+
+func _process(delta: float) -> void:
+	_quota_frame_timer += delta
+	if _quota_frame_timer < QUOTA_FRAME_DURATION:
+		return
+	_quota_frame_timer = 0.0
+	_quota_frame_index = 1 - _quota_frame_index
+	_apply_quota_sprite()
 
 
 func _exit_tree() -> void:
@@ -161,8 +175,50 @@ func _clear_feed() -> void:
 
 
 func _update_progress() -> void:
-	var total := GameState.total_posts_this_level
-	_progress_label.text = "QUOTA\n%d/%d" % [_labeled_count, total]
+	_progress_label.visible = false
+	_apply_quota_sprite()
+
+
+func _cache_quota_sprites() -> void:
+	_quota_frames_by_score.clear()
+	for score in range(QUOTA_SPRITE_MAX + 1):
+		var frames: Array[Texture2D] = []
+		for frame_i in range(1, 3):
+			var path := "%s/Q%d-%04d.png" % [QUOTA_SPRITE_DIR, score, frame_i]
+			var tex := _load_texture_file(path)
+			if tex != null:
+				frames.append(tex)
+		if not frames.is_empty():
+			_quota_frames_by_score[score] = frames
+
+
+func _load_texture_file(path: String) -> Texture2D:
+	if ResourceLoader.exists(path):
+		var loaded := load(path)
+		if loaded is Texture2D:
+			return loaded as Texture2D
+	if not FileAccess.file_exists(path):
+		push_warning("Quota sprite missing: %s" % path)
+		return null
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.is_empty():
+		return null
+	var img := Image.new()
+	if img.load_png_from_buffer(bytes) != OK:
+		push_warning("Quota sprite decode failed: %s" % path)
+		return null
+	return ImageTexture.create_from_image(img)
+
+
+func _apply_quota_sprite() -> void:
+	if _star_texture == null:
+		return
+	var score := clampi(_labeled_count, 0, QUOTA_SPRITE_MAX)
+	var frames: Array = _quota_frames_by_score.get(score, [])
+	if frames.is_empty():
+		return
+	var frame_i := clampi(_quota_frame_index, 0, frames.size() - 1)
+	_star_texture.texture = frames[frame_i] as Texture2D
 
 
 func _on_menu_pressed() -> void:
@@ -185,12 +241,6 @@ func _on_shift_time_up() -> void:
 	_queue_done_label.visible = true
 	_queue_done_label.text = "Shift over — clocked out at 5:00 PM."
 	_finish_level()
-
-
-func set_quota_star(texture: Texture2D) -> void:
-	quota_star_texture = texture
-	if _star_texture:
-		_star_texture.texture = texture
 
 
 func _on_post_labeled(_selected_real: bool, is_correct: bool, post_id: String) -> void:

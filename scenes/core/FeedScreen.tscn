@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scenes/core/FeedScreen.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/feed/GuppiCompanion.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/PhoneStatusBar.tscn" id="3"]
-[ext_resource type="Texture2D" path="res://assets/icons/icon_quota_star.png" id="4"]
 [ext_resource type="Texture2D" path="res://assets/backgrounds/level1-bg.png" id="5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
@@ -197,10 +196,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -104.0
-offset_top = 72.0
-offset_right = -4.0
-offset_bottom = 172.0
+offset_left = -118.0
+offset_top = 68.0
+offset_right = -6.0
+offset_bottom = 180.0
 grow_horizontal = 0
 mouse_filter = 2
 
@@ -213,12 +212,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("4")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="ProgressLabel" type="Label" parent="QuotaBadge"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -231,6 +230,7 @@ offset_right = 36.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0.32, 0.22, 0.14, 1)
 theme_override_font_sizes/font_size = 11
 text = "QUOTA
