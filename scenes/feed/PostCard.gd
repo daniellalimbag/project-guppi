@@ -33,12 +33,15 @@ const COLLAPSE_DELAY := 1.15
 @onready var _media_placeholder: Label = %MediaPlaceholderLabel
 @onready var _media_detail: PanelContainer = %MediaDetail
 @onready var _media_detail_texture: TextureRect = %MediaDetailTexture
+@onready var _media_detail_texture_2: TextureRect = %MediaDetailTexture2
 @onready var _media_detail_label: Label = %MediaDetailLabel
+@onready var _media_count_badge: Label = %MediaCountBadge
 
 var _post_data: Dictionary = {}
 var _comments_open := false
 var _is_locked := false
 var _post_texture: Texture2D = null
+var _post_texture_2: Texture2D = null
 
 
 func _ready() -> void:
@@ -123,21 +126,27 @@ func _apply_post_data() -> void:
 	%AvatarPanel.add_theme_stylebox_override("panel", avatar_style)
 	_avatar_label.text = str(_post_data.get("username", "U")).left(1)
 
-	_post_texture = _load_post_texture()
+	_post_texture = _load_post_texture("image")
+	_post_texture_2 = _load_post_texture("image_2")
 	var has_image := _post_texture != null
-	_media_button.visible = has_image or _expects_photo()
+	var has_image_2 := _post_texture_2 != null
+	_media_button.visible = has_image or _expects_photo("image")
 	_media_texture.texture = _post_texture
 	_media_texture.visible = has_image
 	_media_placeholder.visible = not has_image
 	_media_placeholder.text = "Photo"
+	_media_count_badge.visible = has_image_2
+	_media_count_badge.text = "+1 photo"
 	_media_detail_texture.texture = _post_texture
 	_media_detail_texture.visible = has_image
+	_media_detail_texture_2.texture = _post_texture_2
+	_media_detail_texture_2.visible = has_image_2
 	_media_detail_label.text = _format_media_detail(has_image)
 	_rebuild_comments(_post_data.get("comments", []))
 
 
-func _image_path() -> String:
-	var raw = _post_data.get("image")
+func _image_path(field: String) -> String:
+	var raw = _post_data.get(field)
 	if raw == null:
 		return ""
 	var path := str(raw).strip_edges()
@@ -148,16 +157,16 @@ func _image_path() -> String:
 	return path
 
 
-func _expects_photo() -> bool:
-	var raw = _post_data.get("image")
+func _expects_photo(field: String) -> bool:
+	var raw = _post_data.get(field)
 	if raw == null:
 		return false
 	var path := str(raw).strip_edges()
 	return not path.is_empty()
 
 
-func _load_post_texture() -> Texture2D:
-	var path := _image_path()
+func _load_post_texture(field: String) -> Texture2D:
+	var path := _image_path(field)
 	if path.is_empty():
 		return null
 	if ResourceLoader.exists(path):
