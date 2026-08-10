@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://scenes/feed/PostCard.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/icons/Flag.png" id="2"]
 [ext_resource type="Texture2D" path="res://assets/icons/Check.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/icons/Like.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/icons/Comment.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/icons/Share.png" id="6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
 bg_color = Color(1, 1, 1, 1)
@@ -226,12 +229,25 @@ text = ""
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="LikesLabel" type="Label" parent="OuterMargin/VBox/StatsRow"]
+[node name="LikesRow" type="HBoxContainer" parent="OuterMargin/VBox/StatsRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LikeIcon" type="TextureRect" parent="OuterMargin/VBox/StatsRow/LikesRow"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LikesLabel" type="Label" parent="OuterMargin/VBox/StatsRow/LikesRow"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.25, 0.28, 0.34, 1)
 theme_override_font_sizes/font_size = 12
-text = "♥  0"
+text = "0"
 
 [node name="CommentsToggleButton" type="Button" parent="OuterMargin/VBox/StatsRow"]
 unique_name_in_owner = true
@@ -240,14 +256,29 @@ layout_mode = 2
 focus_mode = 0
 flat = true
 theme_override_colors/font_color = Color(0.25, 0.28, 0.34, 1)
-text = "💬  0"
+theme_override_constants/icon_max_width = 16
+icon = ExtResource("5")
+text = "0"
 
-[node name="SharesLabel" type="Label" parent="OuterMargin/VBox/StatsRow"]
+[node name="SharesRow" type="HBoxContainer" parent="OuterMargin/VBox/StatsRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ShareIcon" type="TextureRect" parent="OuterMargin/VBox/StatsRow/SharesRow"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SharesLabel" type="Label" parent="OuterMargin/VBox/StatsRow/SharesRow"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.25, 0.28, 0.34, 1)
 theme_override_font_sizes/font_size = 12
-text = "↗  0"
+text = "0"
 
 [node name="StatsSpacer" type="Control" parent="OuterMargin/VBox/StatsRow"]
 layout_mode = 2

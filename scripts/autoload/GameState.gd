@@ -155,15 +155,6 @@ func get_shift_clock_text() -> String:
 	return "%d:%02d %s" % [hour12, hm.y, suffix]
 
 
-func get_shift_sky_icon() -> String:
-	var hour := get_shift_clock_hour_minute().x
-	if hour < 11:
-		return "🌅"
-	if hour < 15:
-		return "☀️"
-	return "🌇"
-
-
 func is_shift_time_up() -> bool:
 	var span_min := (SHIFT_END_HOUR - SHIFT_START_HOUR) * 60
 	return get_shift_game_minutes() >= span_min

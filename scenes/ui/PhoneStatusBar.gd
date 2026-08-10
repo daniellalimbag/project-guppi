@@ -3,7 +3,6 @@ class_name PhoneStatusBar
 
 ## Top phone chrome: shift clock (9→5) · sky icon · SHIFT · status icons.
 
-@onready var _sky_label: Label = %SkyLabel
 @onready var _clock_label: Label = %ClockLabel
 @onready var _shift_label: Label = %ShiftLabel
 
@@ -36,12 +35,10 @@ func _apply_theme() -> void:
 	var ink := Color(0.94, 0.97, 0.98, 1)
 	_clock_label.add_theme_color_override("font_color", ink)
 	_shift_label.add_theme_color_override("font_color", ink)
-	_sky_label.add_theme_color_override("font_color", ink)
 
 
 func _refresh_clock() -> void:
 	if _clock_label == null:
 		return
 	_clock_label.text = GameState.get_shift_clock_text()
-	_sky_label.text = GameState.get_shift_sky_icon()
 	GameState.poll_shift_time_up()

@@ -106,9 +106,9 @@ func _apply_post_data() -> void:
 	_verified_label.text = "✔"
 	_timestamp_label.text = str(_post_data.get("timestamp", "now"))
 	_content_label.text = str(_post_data.get("content", ""))
-	_likes_label.text = "♥  %s" % str(_post_data.get("likes", "0"))
-	_comments_toggle_button.text = "💬  %s" % str(_post_data.get("comments_count", "0"))
-	_shares_label.text = "↗  %s" % str(_post_data.get("shares", "0"))
+	_likes_label.text = str(_post_data.get("likes", "0"))
+	_comments_toggle_button.text = str(_post_data.get("comments_count", "0"))
+	_shares_label.text = str(_post_data.get("shares", "0"))
 	_real_button.text = ""
 	_flag_button.text = ""
 	_view_profile_button.text = "Open account"
@@ -272,9 +272,9 @@ func _toggle_comments() -> void:
 	_comments_open = not _comments_open
 	_animate_comments(COMMENTS_OPEN_HEIGHT if _comments_open else 0.0)
 	_comments_toggle_button.text = (
-		"💬  %s  ▲" % str(_post_data.get("comments_count", "0"))
+		"%s  ▲" % str(_post_data.get("comments_count", "0"))
 		if _comments_open
-		else "💬  %s" % str(_post_data.get("comments_count", "0"))
+		else str(_post_data.get("comments_count", "0"))
 	)
 
 
