@@ -1,7 +1,7 @@
 extends Control
 class_name PhoneStatusBar
 
-## Top phone chrome: shift clock (9→5) · sky icon · SHIFT · status icons.
+## Top phone chrome: sun icon · shift clock (9→5) · SHIFT · signal/wifi/battery icons.
 
 @onready var _clock_label: Label = %ClockLabel
 @onready var _shift_label: Label = %ShiftLabel

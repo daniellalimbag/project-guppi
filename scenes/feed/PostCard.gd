@@ -271,11 +271,8 @@ func _toggle_comments() -> void:
 		return
 	_comments_open = not _comments_open
 	_animate_comments(COMMENTS_OPEN_HEIGHT if _comments_open else 0.0)
-	_comments_toggle_button.text = (
-		"%s  ▲" % str(_post_data.get("comments_count", "0"))
-		if _comments_open
-		else str(_post_data.get("comments_count", "0"))
-	)
+	var count_text := str(_post_data.get("comments_count", "0"))
+	_comments_toggle_button.text = "%s  ▲" % count_text if _comments_open else count_text
 
 
 func _animate_comments(target_height: float) -> void:
