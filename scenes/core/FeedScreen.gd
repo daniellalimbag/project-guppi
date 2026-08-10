@@ -347,7 +347,8 @@ func _on_guppi_hint_requested() -> void:
 		return
 
 	var tip := _build_subtle_tip(_active_context_post, _profile_screen.is_open())
-	_guppi.show_hint(str(_active_context_post.get("id", "")), tip)
+	var category := str(_active_context_post.get("insight_tag", "")).strip_edges()
+	_guppi.show_hint(str(_active_context_post.get("id", "")), tip, category if not category.is_empty() else "GUPPI")
 
 
 func _build_subtle_tip(post: Dictionary, viewing_profile: bool) -> String:

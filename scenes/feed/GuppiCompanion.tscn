@@ -14,6 +14,17 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_category_badge"]
+bg_color = Color(0.16, 0.45, 0.42, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+content_margin_left = 8
+content_margin_top = 3
+content_margin_right = 8
+content_margin_bottom = 3
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_placeholder"]
 bg_color = Color(0.28, 0.62, 0.88, 1)
 border_width_left = 2
@@ -70,13 +81,74 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 8
 
-[node name="TooltipLabel" type="Label" parent="Root/VBox/TooltipPanel/TooltipMargin"]
+[node name="TooltipCol" type="VBoxContainer" parent="Root/VBox/TooltipPanel/TooltipMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TooltipHeaderRow" type="HBoxContainer" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TooltipCategoryPanel" type="PanelContainer" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol/TooltipHeaderRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_category_badge")
+
+[node name="TooltipCategoryLabel" type="Label" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol/TooltipHeaderRow/TooltipCategoryPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.95, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "GUPPI"
+
+[node name="TooltipHeaderSpacer" type="Control" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol/TooltipHeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TooltipCloseButton" type="Button" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol/TooltipHeaderRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+focus_mode = 0
+flat = true
+theme_override_colors/font_color = Color(0.75, 0.8, 0.88, 1)
+theme_override_font_sizes/font_size = 13
+text = "✕"
+
+[node name="TooltipLabel" type="Label" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.87, 0.91, 0.99, 1)
 theme_override_font_sizes/font_size = 12
 text = "GUPPI tip"
 autowrap_mode = 3
+
+[node name="TooltipFooterRow" type="HBoxContainer" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol"]
+layout_mode = 2
+alignment = 2
+
+[node name="TooltipCycleButton" type="Button" parent="Root/VBox/TooltipPanel/TooltipMargin/TooltipCol/TooltipFooterRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 22)
+layout_mode = 2
+focus_mode = 0
+flat = true
+tooltip_text = "Browse fake-post categories"
+theme_override_colors/font_color = Color(0.75, 0.95, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "→"
+
+[node name="ArrowRow" type="HBoxContainer" parent="Root/VBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+alignment = 2
+
+[node name="ArrowLabel" type="Label" parent="Root/VBox/ArrowRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.31, 0.36, 0.45, 1)
+theme_override_font_sizes/font_size = 16
+text = "↘"
 
 [node name="EntityRow" type="HBoxContainer" parent="Root/VBox"]
 layout_mode = 2

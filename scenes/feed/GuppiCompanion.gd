@@ -6,6 +6,21 @@ signal hint_requested
 ## Assign a Texture2D here (Inspector or set_sprite) when the entity art is ready.
 @export var sprite_texture: Texture2D
 
+const CATEGORY_INFO: Array[Dictionary] = [
+	{
+		"name": "Misinformation",
+		"blurb": "• Old photos reused as if current\n• Flat-out denials of what happened\n• Numbers that don't match other outlets",
+	},
+	{
+		"name": "Scams",
+		"blurb": "• Urgent donation asks from new accounts\n• Requests for card numbers or personal info\n• QR codes or photos that don't add up",
+	},
+	{
+		"name": "Ai Generated Post",
+		"blurb": "• Impossible feats or too-dramatic scenes\n• Warped or inconsistent details\n• Poster admits the art is AI-made",
+	},
+]
+
 @onready var _root: Control = %Root
 @onready var _entity: Control = %Entity
 @onready var _motion: Control = %Motion
@@ -14,17 +29,28 @@ signal hint_requested
 @onready var _hit_area: Button = %HitArea
 @onready var _tooltip_panel: PanelContainer = %TooltipPanel
 @onready var _tooltip_label: Label = %TooltipLabel
+@onready var _tooltip_category_panel: PanelContainer = %TooltipCategoryPanel
+@onready var _tooltip_category_label: Label = %TooltipCategoryLabel
+@onready var _tooltip_close_button: Button = %TooltipCloseButton
+@onready var _tooltip_cycle_button: Button = %TooltipCycleButton
+@onready var _arrow_row: Control = %ArrowRow
 
 var _last_hint_post_id: String = ""
 var _idle_tween: Tween
 var _react_tween: Tween
+var _category_cycle_index: int = -1
 
 
 func _ready() -> void:
 	_tooltip_panel.visible = false
-	_hit_area.pressed.connect(func() -> void: hint_requested.emit())
+	_arrow_row.visible = false
+	_hit_area.pressed.connect(_on_hit_area_pressed)
+	_tooltip_close_button.pressed.connect(_hide_tooltip)
+	_tooltip_cycle_button.pressed.connect(_cycle_category)
 	_clear_hit_area_chrome()
 	_apply_sprite(sprite_texture)
+	SettingsStore.settings_changed.connect(_apply_theme)
+	_apply_theme()
 	_root.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
 	_root.offset_left = -300.0
 	_root.offset_top = -210.0
@@ -40,13 +66,41 @@ func set_sprite(texture: Texture2D) -> void:
 	_apply_sprite(texture)
 
 
-func show_hint(post_id: String, hint_text: String) -> void:
+func _apply_theme() -> void:
+	var palette := SettingsStore.get_palette()
+	var accent_dark: Color = palette.get("accent_dark", Color(0.16, 0.45, 0.42, 1))
+	var badge_style := StyleBoxFlat.new()
+	badge_style.bg_color = accent_dark
+	badge_style.corner_radius_top_left = 6
+	badge_style.corner_radius_top_right = 6
+	badge_style.corner_radius_bottom_right = 6
+	badge_style.corner_radius_bottom_left = 6
+	badge_style.content_margin_left = 8
+	badge_style.content_margin_top = 3
+	badge_style.content_margin_right = 8
+	badge_style.content_margin_bottom = 3
+	_tooltip_category_panel.add_theme_stylebox_override("panel", badge_style)
+
+
+func show_hint(post_id: String, hint_text: String, category: String = "GUPPI") -> void:
 	if hint_text.strip_edges().is_empty():
 		return
 	_last_hint_post_id = post_id
+	_category_cycle_index = -1
 	_tooltip_label.text = hint_text
+	_tooltip_category_label.text = category.strip_edges().to_upper() if not category.strip_edges().is_empty() else "GUPPI"
 	_play_react()
 	_show_tooltip()
+
+
+func _cycle_category() -> void:
+	_category_cycle_index = (_category_cycle_index + 1) % CATEGORY_INFO.size()
+	var info: Dictionary = CATEGORY_INFO[_category_cycle_index]
+	_tooltip_category_label.text = str(info.get("name", "")).to_upper()
+	_tooltip_label.text = str(info.get("blurb", ""))
+	if not _tooltip_panel.visible:
+		_play_react()
+		_show_tooltip()
 
 
 func get_last_hint_post_id() -> String:
@@ -102,13 +156,28 @@ func _play_react() -> void:
 	_react_tween.tween_property(_motion, "scale", Vector2.ONE, 0.18)
 
 
+func _on_hit_area_pressed() -> void:
+	if _tooltip_panel.visible:
+		_hide_tooltip()
+	else:
+		_cycle_category()
+
+
 func _show_tooltip() -> void:
 	_tooltip_panel.visible = true
+	_arrow_row.visible = true
 	_tooltip_panel.modulate.a = 0.0
 	var tween := create_tween()
 	tween.tween_property(_tooltip_panel, "modulate:a", 1.0, 0.14)
-	tween.tween_interval(3.0)
-	tween.tween_property(_tooltip_panel, "modulate:a", 0.0, 0.22)
+
+
+func _hide_tooltip() -> void:
+	if not _tooltip_panel.visible:
+		return
+	var tween := create_tween()
+	tween.tween_property(_tooltip_panel, "modulate:a", 0.0, 0.16)
 	tween.tween_callback(func() -> void:
 		_tooltip_panel.visible = false
+		_arrow_row.visible = false
+		_category_cycle_index = -1
 	)
