@@ -3,8 +3,10 @@ class_name GuppiCompanion
 
 signal hint_requested
 
-## Assign a Texture2D here (Inspector or set_sprite) when the entity art is ready.
+## Assign a Texture2D here (Inspector or set_sprite) to override the default animation.
 @export var sprite_texture: Texture2D
+
+const DEFAULT_ANIM_DIR := "res://assets/icons/guppi_anim"
 
 const CATEGORY_INFO: Array[Dictionary] = [
 	{
@@ -39,6 +41,10 @@ var _last_hint_post_id: String = ""
 var _idle_tween: Tween
 var _react_tween: Tween
 var _category_cycle_index: int = -1
+var _anim_frames: Array[Texture2D] = []
+var _anim_durations: Array[float] = []
+var _anim_frame_index: int = 0
+var _anim_frame_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -48,6 +54,8 @@ func _ready() -> void:
 	_tooltip_close_button.pressed.connect(_hide_tooltip)
 	_tooltip_cycle_button.pressed.connect(_cycle_category)
 	_clear_hit_area_chrome()
+	if sprite_texture == null:
+		_load_default_animation()
 	_apply_sprite(sprite_texture)
 	SettingsStore.settings_changed.connect(_apply_theme)
 	_apply_theme()
@@ -64,6 +72,18 @@ func _ready() -> void:
 func set_sprite(texture: Texture2D) -> void:
 	sprite_texture = texture
 	_apply_sprite(texture)
+
+
+func _process(delta: float) -> void:
+	if _anim_frames.size() <= 1:
+		return
+	_anim_frame_timer += delta
+	var current_duration: float = _anim_durations[_anim_frame_index]
+	if _anim_frame_timer < current_duration:
+		return
+	_anim_frame_timer = 0.0
+	_anim_frame_index = (_anim_frame_index + 1) % _anim_frames.size()
+	_body.texture = _anim_frames[_anim_frame_index]
 
 
 func _apply_theme() -> void:
@@ -109,6 +129,45 @@ func get_last_hint_post_id() -> String:
 
 func nudge() -> void:
 	_play_react()
+
+
+func _load_default_animation() -> void:
+	var manifest_path := "%s/frames.json" % DEFAULT_ANIM_DIR
+	if not FileAccess.file_exists(manifest_path):
+		return
+	var file := FileAccess.open(manifest_path, FileAccess.READ)
+	var parsed: Variant = JSON.parse_string(file.get_as_text())
+	if typeof(parsed) != TYPE_DICTIONARY:
+		return
+	var frame_count := int(parsed.get("frame_count", 0))
+	var durations_ms: Array = parsed.get("durations_ms", [])
+	for i in frame_count:
+		var tex := _load_texture_file("%s/frame_%04d.png" % [DEFAULT_ANIM_DIR, i])
+		if tex == null:
+			continue
+		_anim_frames.append(tex)
+		var dur_ms: float = float(durations_ms[i]) if i < durations_ms.size() else 100.0
+		_anim_durations.append(dur_ms / 1000.0)
+	if not _anim_frames.is_empty():
+		sprite_texture = _anim_frames[0]
+
+
+func _load_texture_file(path: String) -> Texture2D:
+	if ResourceLoader.exists(path):
+		var loaded := load(path)
+		if loaded is Texture2D:
+			return loaded as Texture2D
+	if not FileAccess.file_exists(path):
+		push_warning("Guppi animation frame missing: %s" % path)
+		return null
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.is_empty():
+		return null
+	var img := Image.new()
+	if img.load_png_from_buffer(bytes) != OK:
+		push_warning("Guppi animation frame decode failed: %s" % path)
+		return null
+	return ImageTexture.create_from_image(img)
 
 
 func _apply_sprite(texture: Texture2D) -> void:
