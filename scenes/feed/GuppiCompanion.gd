@@ -6,7 +6,9 @@ signal hint_requested
 ## Assign a Texture2D here (Inspector or set_sprite) to override the default animation.
 @export var sprite_texture: Texture2D
 
-const DEFAULT_ANIM_DIR := "res://assets/icons/guppi_anim"
+const DEFAULT_ANIM_DIR := "res://assets/GUPPI ANIM"
+const DEFAULT_ANIM_FRAME_COUNT := 16
+const DEFAULT_ANIM_FPS := 8.0
 
 const CATEGORY_INFO: Array[Dictionary] = [
 	{
@@ -132,22 +134,12 @@ func nudge() -> void:
 
 
 func _load_default_animation() -> void:
-	var manifest_path := "%s/frames.json" % DEFAULT_ANIM_DIR
-	if not FileAccess.file_exists(manifest_path):
-		return
-	var file := FileAccess.open(manifest_path, FileAccess.READ)
-	var parsed: Variant = JSON.parse_string(file.get_as_text())
-	if typeof(parsed) != TYPE_DICTIONARY:
-		return
-	var frame_count := int(parsed.get("frame_count", 0))
-	var durations_ms: Array = parsed.get("durations_ms", [])
-	for i in frame_count:
-		var tex := _load_texture_file("%s/frame_%04d.png" % [DEFAULT_ANIM_DIR, i])
+	for i in range(1, DEFAULT_ANIM_FRAME_COUNT + 1):
+		var tex := _load_texture_file("%s/GUPPI-%04d.png" % [DEFAULT_ANIM_DIR, i])
 		if tex == null:
 			continue
 		_anim_frames.append(tex)
-		var dur_ms: float = float(durations_ms[i]) if i < durations_ms.size() else 100.0
-		_anim_durations.append(dur_ms / 1000.0)
+		_anim_durations.append(1.0 / DEFAULT_ANIM_FPS)
 	if not _anim_frames.is_empty():
 		sprite_texture = _anim_frames[0]
 
