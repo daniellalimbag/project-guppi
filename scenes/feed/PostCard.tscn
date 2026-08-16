@@ -294,6 +294,7 @@ layout_mode = 2
 theme_override_constants/separation = 4
 
 [node name="ShareIcon" type="TextureRect" parent="OuterMargin/VBox/StatsRow/SharesRow"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_vertical = 4

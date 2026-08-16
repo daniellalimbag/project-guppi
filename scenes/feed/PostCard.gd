@@ -18,6 +18,7 @@ const COLLAPSE_DELAY := 1.15
 @onready var _likes_label: Label = %LikesLabel
 @onready var _like_icon: TextureRect = %LikeIcon
 @onready var _comment_icon: TextureRect = %CommentIcon
+@onready var _share_icon: TextureRect = %ShareIcon
 @onready var _comments_count_label: Label = %CommentsCountLabel
 @onready var _comments_toggle_button: Button = %CommentsToggleButton
 @onready var _shares_label: Label = %SharesLabel
@@ -61,6 +62,7 @@ func _ready() -> void:
 	_flag_button.text = ""
 	_like_icon.texture = _load_icon_texture("res://assets/icons/Like.png")
 	_comment_icon.texture = _load_icon_texture("res://assets/icons/Comment.png")
+	_share_icon.texture = _load_icon_texture("res://assets/icons/Share.png")
 
 	_avatar_button.pressed.connect(_request_profile)
 	_username_button.pressed.connect(_request_profile)
