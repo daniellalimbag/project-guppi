@@ -16,6 +16,9 @@ const COLLAPSE_DELAY := 1.15
 @onready var _timestamp_label: Label = %TimestampLabel
 @onready var _content_label: Label = %ContentLabel
 @onready var _likes_label: Label = %LikesLabel
+@onready var _like_icon: TextureRect = %LikeIcon
+@onready var _comment_icon: TextureRect = %CommentIcon
+@onready var _comments_count_label: Label = %CommentsCountLabel
 @onready var _comments_toggle_button: Button = %CommentsToggleButton
 @onready var _shares_label: Label = %SharesLabel
 @onready var _view_profile_button: Button = %ViewProfileButton
@@ -47,7 +50,7 @@ var _post_texture_2: Texture2D = null
 func _ready() -> void:
 	_avatar_button.custom_minimum_size = Vector2(48, 48)
 	_username_button.custom_minimum_size.y = 28
-	_comments_toggle_button.custom_minimum_size = Vector2(44, 44)
+	_comments_toggle_button.custom_minimum_size = Vector2(52, 36)
 	_view_profile_button.custom_minimum_size = Vector2(0, 40)
 	_real_button.custom_minimum_size = Vector2(40, 40)
 	_flag_button.custom_minimum_size = Vector2(40, 40)
@@ -56,6 +59,8 @@ func _ready() -> void:
 	_style_icon_button(_flag_button)
 	_real_button.text = ""
 	_flag_button.text = ""
+	_like_icon.texture = _load_icon_texture("res://assets/icons/Like.png")
+	_comment_icon.texture = _load_icon_texture("res://assets/icons/Comment.png")
 
 	_avatar_button.pressed.connect(_request_profile)
 	_username_button.pressed.connect(_request_profile)
@@ -107,7 +112,8 @@ func _apply_post_data() -> void:
 	_timestamp_label.text = str(_post_data.get("timestamp", "now"))
 	_content_label.text = str(_post_data.get("content", ""))
 	_likes_label.text = str(_post_data.get("likes", "0"))
-	_comments_toggle_button.text = str(_post_data.get("comments_count", "0"))
+	_comments_count_label.text = str(_post_data.get("comments_count", "0"))
+	_comments_toggle_button.text = ""
 	_shares_label.text = str(_post_data.get("shares", "0"))
 	_real_button.text = ""
 	_flag_button.text = ""
@@ -163,6 +169,24 @@ func _expects_photo(field: String) -> bool:
 		return false
 	var path := str(raw).strip_edges()
 	return not path.is_empty()
+
+
+func _load_icon_texture(path: String) -> Texture2D:
+	if ResourceLoader.exists(path):
+		var loaded := load(path)
+		if loaded is Texture2D:
+			return loaded as Texture2D
+	if not FileAccess.file_exists(path):
+		push_warning("Icon missing: %s" % path)
+		return null
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.is_empty():
+		return null
+	var img := Image.new()
+	if img.load_png_from_buffer(bytes) != OK:
+		push_warning("Icon decode failed: %s" % path)
+		return null
+	return ImageTexture.create_from_image(img)
 
 
 func _load_post_texture(field: String) -> Texture2D:
@@ -272,7 +296,8 @@ func _toggle_comments() -> void:
 	_comments_open = not _comments_open
 	_animate_comments(COMMENTS_OPEN_HEIGHT if _comments_open else 0.0)
 	var count_text := str(_post_data.get("comments_count", "0"))
-	_comments_toggle_button.text = "%s  ▲" % count_text if _comments_open else count_text
+	_comments_count_label.text = "%s  ▲" % count_text if _comments_open else count_text
+	_comments_toggle_button.text = ""
 
 
 func _animate_comments(target_height: float) -> void:
